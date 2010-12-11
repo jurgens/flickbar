@@ -3,6 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.0.4.rc'
 gem 'mysql2'
 gem 'capistrano'
+gem 'jquery-rails'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
 # gem 'ruby-debug'
