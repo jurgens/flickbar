@@ -1,0 +1,46 @@
+@import "compass/utilities/lists/horizontal-list"
+@import "compass/utilities/general/min"
+@import "compass/layout/sticky-footer"
+
+@include sticky-footer(50px, '#wrapper', '#wrapper-footer', '#footer')
+
+body.bp
+  font-size: 86%
+
+  #header
+
+    #logo
+      font-size: 3em
+      font-family: 'Neuton', arial, serif
+      color: #333
+      +float-left
+      a
+        color: #333
+        text-decoration: none
+
+
+    #user-navigation
+      margin-top: 1em
+      +float-right
+      ul
+        +horizontal-list
+        > li
+        +horizontal-list-item
+
+  #container
+    height: 100%
+    +container
+
+  #wrapper
+
+
+    #header
+      +container
+      @include column($blueprint-grid-columns)
+
+  #footer
+    +container
+    @include column($blueprint-grid-columns)
+    padding: 10px
+    text-align: center
+
