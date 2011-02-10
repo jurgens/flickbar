@@ -3,3 +3,6 @@ log/*.log
 tmp/**/*
 config/database.yml
 .idea
+public/stylesheets/ie.css
+public/stylesheets/print.css
+public/stylesheets/screen.css
