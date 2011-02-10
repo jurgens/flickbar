@@ -10,12 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209205310) do
+ActiveRecord::Schema.define(:version => 20110209225154) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
     t.string   "uid"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "movies", :force => true do |t|
+    t.string   "title"
+    t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -28,5 +35,15 @@ ActiveRecord::Schema.define(:version => 20110209205310) do
   end
 
   add_index "users", ["nickname"], :name => "index_users_on_nickname", :unique => true
+
+  create_table "watches", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "watches", ["movie_id"], :name => "index_watches_on_movie_id"
+  add_index "watches", ["user_id"], :name => "index_watches_on_user_id"
 
 end

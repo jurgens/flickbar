@@ -6,6 +6,10 @@ Flickbar2::Application.routes.draw do
 
   root :to => 'home#index'
 
+  resources :watches
+
+  devise_for :users
+
   match '/:nickname', :to => 'users#show', :as => 'user', :constraints => {:nickname => /.+/}
 
   # Sample of regular route:

@@ -12,10 +12,9 @@ body.bp
     #logo
       font-size: 3em
       font-family: 'Neuton', arial, serif
-      color: #333
       +float-left
       a
-        color: #333
+        color: #558
         text-decoration: none
 
 
@@ -26,17 +25,10 @@ body.bp
         +horizontal-list
         > li
         +horizontal-list-item
-
-  #container
-    height: 100%
-    +container
-
   #wrapper
-
-
     #header
-      +container
       @include column($blueprint-grid-columns)
+      margin-bottom: 20px
 
   #footer
     +container
@@ -44,3 +36,36 @@ body.bp
     padding: 10px
     text-align: center
 
+
+  #container
+    height: 100%
+    +container
+
+    #content
+      clear: both
+
+    .watches
+      .watch
+        margin-bottom: 20px
+        h2
+          font-family: Neuton
+          color: #444
+          padding: 0
+          margin: 0
+          .remove
+            display: none
+
+        h2:hover
+          .remove
+            display: inline
+
+        .ago
+          color: #999
+
+    form.lookup
+      margin-bottom: 20px
+      input
+        padding: 4px
+        font-size: 120%
+        &#title
+          width: 480px

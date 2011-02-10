@@ -1,0 +1,5 @@
+= form_tag '/watches', :class => 'lookup', :method => :post do
+  %label{:for => 'title'} What movie would you like to watch or already watched?
+  %br
+  = text_field_tag :title
+  = submit_tag 'Add to my watch list'

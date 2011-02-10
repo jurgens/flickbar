@@ -1,1 +1,15 @@
-user page
+
+= render :partial => 'shared/lookup' if current_user == @account
+
+- if @watches.empty?
+  no movies
+- else
+  .watches
+    - @watches.each do |watch|
+      .watch
+        %h2
+          = watch.movie.title
+          = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
+        .ago
+          = time_ago_in_words(watch.created_at)
+          ago

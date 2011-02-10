@@ -23,10 +23,12 @@
             - if current_user
               %ul
                 %li= link_to current_user.name, user_path(current_user.nickname)
-                %li= link_to 'Logout', '#'
+                -#%li= link_to 'Logout', '#'
             - else
               = link_to 'Login', '/auth/facebook'
 
+        #content
+          = yield
 
 
         #wrapper-footer

@@ -32,8 +32,10 @@ group :development do
 end
 
 group :test do
+  gem 'factory_girl_rails'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'shoulda'
 end

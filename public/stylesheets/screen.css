@@ -577,22 +577,21 @@ body.bp {
 body.bp #header #logo {
   font-size: 3em;
   font-family: "Neuton", arial, serif;
-  color: #333333;
   display: inline;
   float: left;
 }
-/* line 17, sass/partials/_layout.sass */
+/* line 16, sass/partials/_layout.sass */
 body.bp #header #logo a {
-  color: #333333;
+  color: #555588;
   text-decoration: none;
 }
-/* line 22, sass/partials/_layout.sass */
+/* line 21, sass/partials/_layout.sass */
 body.bp #header #user-navigation {
   margin-top: 1em;
   display: inline;
   float: right;
 }
-/* line 25, sass/partials/_layout.sass */
+/* line 24, sass/partials/_layout.sass */
 body.bp #header #user-navigation ul {
   margin: 0;
   padding: 0;
@@ -636,30 +635,19 @@ body.bp #header #user-navigation ul:first-child, body.bp #header #user-navigatio
 body.bp #header #user-navigation ul:last-child, body.bp #header #user-navigation ul.last {
   padding-right: 0;
 }
-/* line 30, sass/partials/_layout.sass */
-body.bp #container {
-  height: 100%;
-  width: 950px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
-}
-/* line 37, sass/partials/_layout.sass */
+/* line 29, sass/partials/_layout.sass */
 body.bp #wrapper #header {
-  width: 950px;
-  margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
   display: inline;
   float: left;
   margin-right: 10px;
   width: 950px;
+  margin-bottom: 20px;
 }
 /* line 138, ../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.bp #wrapper #header {
   overflow-x: hidden;
 }
-/* line 41, sass/partials/_layout.sass */
+/* line 33, sass/partials/_layout.sass */
 body.bp #footer {
   width: 950px;
   margin: 0 auto;
@@ -675,4 +663,52 @@ body.bp #footer {
 /* line 138, ../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.bp #footer {
   overflow-x: hidden;
+}
+/* line 40, sass/partials/_layout.sass */
+body.bp #container {
+  height: 100%;
+  width: 950px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1;
+}
+/* line 44, sass/partials/_layout.sass */
+body.bp #container #content {
+  clear: both;
+}
+/* line 48, sass/partials/_layout.sass */
+body.bp #container .watches .watch {
+  margin-bottom: 20px;
+}
+/* line 50, sass/partials/_layout.sass */
+body.bp #container .watches .watch h2 {
+  font-family: Neuton;
+  color: #444444;
+  padding: 0;
+  margin: 0;
+}
+/* line 55, sass/partials/_layout.sass */
+body.bp #container .watches .watch h2 .remove {
+  display: none;
+}
+/* line 59, sass/partials/_layout.sass */
+body.bp #container .watches .watch h2:hover .remove {
+  display: inline;
+}
+/* line 62, sass/partials/_layout.sass */
+body.bp #container .watches .watch .ago {
+  color: #999999;
+}
+/* line 65, sass/partials/_layout.sass */
+body.bp #container form.lookup {
+  margin-bottom: 20px;
+}
+/* line 67, sass/partials/_layout.sass */
+body.bp #container form.lookup input {
+  padding: 4px;
+  font-size: 120%;
+}
+/* line 70, sass/partials/_layout.sass */
+body.bp #container form.lookup input#title {
+  width: 480px;
 }
