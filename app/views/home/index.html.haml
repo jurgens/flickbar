@@ -24,4 +24,6 @@
 
       .recent-movies
         - @recent_movies.each do |movie|
-          .movie= movie.title
+          .movie
+            = movie.title
+            %sup= movie.watches.count

@@ -1,5 +1,5 @@
 
-= render :partial => 'shared/lookup' if current_user == @account
+= render :partial => 'shared/lookup' #if current_user == @account
 
 - if @watches.empty?
   no movies
@@ -12,7 +12,8 @@
         %h2
           = watch.movie.title
           %sup= watch.movie.users.count
-          = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
+          - if current_user == @account
+            = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
         .ago
           = time_ago_in_words(watch.created_at)
           ago

@@ -8,6 +8,12 @@
 body.bp
   font-size: 86%
 
+  .flash
+    .message
+      +border-radius
+      p
+        margin: 0
+
   #header
     @include column($blueprint-grid-columns)
     margin-bottom: 10px
@@ -46,6 +52,7 @@ body.bp
       clear: both
 
     .watches
+      padding-top: 20px
       .watch
         margin-bottom: 20px
         .thumb
@@ -62,10 +69,6 @@ body.bp
           margin: 0
           .remove
             display: none
-
-          sup
-            color: #6c6
-            font-size: 12px
 
         h2:hover
           .remove
@@ -95,6 +98,14 @@ body.bp
       font-style: italic
       background-color: #eee
       +border-radius
+
+  h2 sup, .movie sup
+    color: #6c6
+    font-size: 12px
+
+  .movie sup
+    font-size: 10px
+
 
   a.user
     padding-left: 14px
