@@ -9,10 +9,13 @@ body.bp
   font-size: 86%
 
   #header
-
+    @include column($blueprint-grid-columns)
+    margin-bottom: 10px
     #logo
+      margin-top: 10px
       font-size: 3em
       font-family: 'Georgia', arial, serif
+      letter-spacing: 110%
       +float-left
       a
         color: #558
@@ -26,10 +29,6 @@ body.bp
         +horizontal-list
         > li
         +horizontal-list-item
-  #wrapper
-    #header
-      @include column($blueprint-grid-columns)
-      margin-bottom: 20px
 
   #footer
     +container

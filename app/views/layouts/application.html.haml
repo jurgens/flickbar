@@ -3,7 +3,7 @@
 %html{'xmlns'=>'http://www.w3.org/1999/xhtml'}
   %head
     %meta{'http-equiv'=>"Content-Type", 'content'=>"text/html; charset=utf-8"}
-    %title Movieable
+    %title Flickbar
     -#{AppConfig['app_name']}#{" - " + yield(:title) if content_for?(:title)}"
     <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
@@ -17,7 +17,7 @@
     #container
       #wrapper
         #header
-          #logo= link_to 'Movieable', root_path
+          #logo= link_to 'flickbar', root_path
 
           #user-navigation
             - if current_user

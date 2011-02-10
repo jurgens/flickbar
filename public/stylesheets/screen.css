@@ -573,25 +573,39 @@ html, body {
 body.bp {
   font-size: 86%;
 }
-/* line 13, sass/partials/_layout.sass */
+/* line 11, sass/partials/_layout.sass */
+body.bp #header {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 950px;
+  margin-bottom: 10px;
+}
+/* line 138, ../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html body.bp #header {
+  overflow-x: hidden;
+}
+/* line 14, sass/partials/_layout.sass */
 body.bp #header #logo {
+  margin-top: 10px;
   font-size: 3em;
   font-family: "Georgia", arial, serif;
+  letter-spacing: 110%;
   display: inline;
   float: left;
 }
-/* line 17, sass/partials/_layout.sass */
+/* line 20, sass/partials/_layout.sass */
 body.bp #header #logo a {
   color: #555588;
   text-decoration: none;
 }
-/* line 22, sass/partials/_layout.sass */
+/* line 25, sass/partials/_layout.sass */
 body.bp #header #user-navigation {
   margin-top: 1em;
   display: inline;
   float: right;
 }
-/* line 25, sass/partials/_layout.sass */
+/* line 28, sass/partials/_layout.sass */
 body.bp #header #user-navigation ul {
   margin: 0;
   padding: 0;
@@ -635,19 +649,7 @@ body.bp #header #user-navigation ul:first-child, body.bp #header #user-navigatio
 body.bp #header #user-navigation ul:last-child, body.bp #header #user-navigation ul.last {
   padding-right: 0;
 }
-/* line 30, sass/partials/_layout.sass */
-body.bp #wrapper #header {
-  display: inline;
-  float: left;
-  margin-right: 10px;
-  width: 950px;
-  margin-bottom: 20px;
-}
-/* line 138, ../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
-* html body.bp #wrapper #header {
-  overflow-x: hidden;
-}
-/* line 34, sass/partials/_layout.sass */
+/* line 33, sass/partials/_layout.sass */
 body.bp #footer {
   width: 950px;
   margin: 0 auto;
@@ -664,7 +666,7 @@ body.bp #footer {
 * html body.bp #footer {
   overflow-x: hidden;
 }
-/* line 41, sass/partials/_layout.sass */
+/* line 40, sass/partials/_layout.sass */
 body.bp #container {
   height: 100%;
   width: 950px;
@@ -672,40 +674,40 @@ body.bp #container {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 45, sass/partials/_layout.sass */
+/* line 44, sass/partials/_layout.sass */
 body.bp #container #content {
   clear: both;
 }
-/* line 49, sass/partials/_layout.sass */
+/* line 48, sass/partials/_layout.sass */
 body.bp #container .watches .watch {
   margin-bottom: 20px;
 }
-/* line 51, sass/partials/_layout.sass */
+/* line 50, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 {
   font-family: "Georgia", arial, serif;
   color: #444444;
   padding: 0;
   margin: 0;
 }
-/* line 56, sass/partials/_layout.sass */
+/* line 55, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 .remove {
   display: none;
 }
-/* line 59, sass/partials/_layout.sass */
+/* line 58, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 sup {
   color: #66cc66;
   font-size: 12px;
 }
-/* line 64, sass/partials/_layout.sass */
+/* line 63, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2:hover .remove {
   display: inline;
 }
-/* line 67, sass/partials/_layout.sass */
+/* line 66, sass/partials/_layout.sass */
 body.bp #container .watches .watch .ago {
   color: #999999;
   font-size: 11px;
 }
-/* line 71, sass/partials/_layout.sass */
+/* line 70, sass/partials/_layout.sass */
 body.bp #container form.lookup {
   background-color: #00b7cd;
   padding: 20px;
@@ -717,12 +719,12 @@ body.bp #container form.lookup {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 76, sass/partials/_layout.sass */
+/* line 75, sass/partials/_layout.sass */
 body.bp #container form.lookup input {
   padding: 4px;
   font-size: 120%;
 }
-/* line 79, sass/partials/_layout.sass */
+/* line 78, sass/partials/_layout.sass */
 body.bp #container form.lookup input#title {
   width: 680px;
 }
