@@ -1,8 +1,9 @@
+require 'bundler/capistrano'
 
 set :application, "flickbar.com"
 set :domain,      "flickbar.com"
-set :repository,  "ssh://git@local3.webta.net/home/git/flickbar.git"
-set :rails_env,   "staging"
+set :repository,  "ssh://git@local3.webta.net/home/git/movieable.git"
+set :rails_env,   "production"
 
 default_run_options[:pty] = true
 ssh_options[:paranoid]    = false
@@ -13,9 +14,9 @@ set :user,      "flickbar"
 set :runner,    "flickbar"
 set :use_sudo,  false
 
-set :deploy_to, "/home/flickbar/domains/staging.#{application}"
+set :deploy_to, "/home/flickbar/domains/#{application}"
 set :branch,               "master"
-set :deploy_via,            :checkout
+set :deploy_via,            :remote_cache
 
 default_run_options[:pty] = true
 
@@ -25,35 +26,10 @@ role :db,  domain, :primary => true
 
 
 
-
 # Create uploads directory and link
-task :update_code, :roles => :app do
+task :configure, :roles => :app do
   run "cp #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-#  run "ln -s #{shared_path}/files #{release_path}/public/files"
-
-#  run "cd #{latest_release}; bundle install --deployment"
 end
-
-after "deploy:update", "update_code"
-
-
-#namespace :cron do
-#  task :update, :roles => :app do
-#    #reinstall cron tasks
-#    run "echo "
-#    run "cd #{release_path}; rake gw:cron:install RAILS_ENV=production"
-#  end
-#end
-
-#namespace :gems do
-#  task :install, :roles => :app  do
-#    run "cd #{release_path}; #{sudo} /opt/ruby/bin/rake gems:install RAILS_ENV=production"
-#  end
-#end
-#
-#after :deploy, "gems:install", "cron:update"
-#after :deploy, "cron:update"
-
 
 # Passenger tasks
 namespace :deploy do
@@ -68,4 +44,4 @@ namespace :deploy do
   end
 end
 
-after "deploy:update", "deploy:migrate"
+after "deploy:update", "configure", "deploy:migrate", "deploy:cleanup"
