@@ -7,6 +7,8 @@
   .watches
     - @watches.each do |watch|
       .watch
+        .thumb
+          = image_tag 'icons/movie.jpg'
         %h2
           = watch.movie.title
           %sup= watch.movie.users.count

@@ -2,7 +2,26 @@
 - if current_user
   = render :partial => 'shared/lookup'
 - else
-  %p
+  %h2.login_invitation
     Please
     = link_to 'login', '/auth/facebook'
-    to start adding movies to your watch list 
+    to start adding movies to your watch list
+
+.recent
+  .left
+    %h2 people recently joined
+
+    - unless @recent_users.empty?
+
+      .recent-users
+        - @recent_users.each do |user|
+          = link_to user.name, user_path(user.nickname), :class => 'user'
+
+  .right
+    %h2 movies recently watched
+
+    - unless @recent_movies.empty?
+
+      .recent-movies
+        - @recent_movies.each do |movie|
+          .movie= movie.title

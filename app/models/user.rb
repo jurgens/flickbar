@@ -4,9 +4,15 @@ class User < ActiveRecord::Base
   
   devise :omniauthable
 
+  scope :recent, order("created_at DESC").limit(25)
+
   attr_accessible :name, :nickname
 
   def self.create_from_hash!(hash)
-    create(:name => hash['user_info']['name'], :nickname => hash['user_info']['nickname'])
+    nick = hash['user_info']['nickname']
+    if nick.match /^profile\.php.+/
+      nick = hash['user_info']['name'].split(' ').map(&:downcase).join('.')
+    end
+    create(:name => hash['user_info']['name'], :nickname => nick)
   end
 end

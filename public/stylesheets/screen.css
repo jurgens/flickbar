@@ -588,24 +588,25 @@ body.bp #header {
 /* line 14, sass/partials/_layout.sass */
 body.bp #header #logo {
   margin-top: 10px;
-  font-size: 3em;
-  font-family: "Georgia", arial, serif;
-  letter-spacing: 110%;
+  font-size: 200%;
+  font-family: "Merriweather", arial, serif;
+  letter-spacing: 0px;
+  text-transform: lowercase;
   display: inline;
   float: left;
 }
-/* line 20, sass/partials/_layout.sass */
+/* line 21, sass/partials/_layout.sass */
 body.bp #header #logo a {
-  color: #555588;
+  color: #333333;
   text-decoration: none;
 }
-/* line 25, sass/partials/_layout.sass */
+/* line 26, sass/partials/_layout.sass */
 body.bp #header #user-navigation {
   margin-top: 1em;
   display: inline;
   float: right;
 }
-/* line 28, sass/partials/_layout.sass */
+/* line 29, sass/partials/_layout.sass */
 body.bp #header #user-navigation ul {
   margin: 0;
   padding: 0;
@@ -649,7 +650,7 @@ body.bp #header #user-navigation ul:first-child, body.bp #header #user-navigatio
 body.bp #header #user-navigation ul:last-child, body.bp #header #user-navigation ul.last {
   padding-right: 0;
 }
-/* line 33, sass/partials/_layout.sass */
+/* line 34, sass/partials/_layout.sass */
 body.bp #footer {
   width: 950px;
   margin: 0 auto;
@@ -666,7 +667,7 @@ body.bp #footer {
 * html body.bp #footer {
   overflow-x: hidden;
 }
-/* line 40, sass/partials/_layout.sass */
+/* line 41, sass/partials/_layout.sass */
 body.bp #container {
   height: 100%;
   width: 950px;
@@ -674,40 +675,54 @@ body.bp #container {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 44, sass/partials/_layout.sass */
+/* line 45, sass/partials/_layout.sass */
 body.bp #container #content {
   clear: both;
 }
-/* line 48, sass/partials/_layout.sass */
+/* line 49, sass/partials/_layout.sass */
 body.bp #container .watches .watch {
   margin-bottom: 20px;
 }
-/* line 50, sass/partials/_layout.sass */
+/* line 51, sass/partials/_layout.sass */
+body.bp #container .watches .watch .thumb {
+  float: left;
+  padding: 0 5px 5px 0;
+}
+/* line 54, sass/partials/_layout.sass */
+body.bp #container .watches .watch .thumb img {
+  border: 1px #eeeeee solid;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+  padding: 4px;
+}
+/* line 60, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 {
-  font-family: "Georgia", arial, serif;
-  color: #444444;
   padding: 0;
   margin: 0;
 }
-/* line 55, sass/partials/_layout.sass */
+/* line 63, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 .remove {
   display: none;
 }
-/* line 58, sass/partials/_layout.sass */
+/* line 66, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 sup {
   color: #66cc66;
   font-size: 12px;
 }
-/* line 63, sass/partials/_layout.sass */
+/* line 71, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2:hover .remove {
   display: inline;
 }
-/* line 66, sass/partials/_layout.sass */
+/* line 74, sass/partials/_layout.sass */
 body.bp #container .watches .watch .ago {
   color: #999999;
   font-size: 11px;
 }
-/* line 70, sass/partials/_layout.sass */
+/* line 78, sass/partials/_layout.sass */
 body.bp #container form.lookup {
   background-color: #00b7cd;
   padding: 20px;
@@ -719,12 +734,50 @@ body.bp #container form.lookup {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 75, sass/partials/_layout.sass */
+/* line 83, sass/partials/_layout.sass */
 body.bp #container form.lookup input {
   padding: 4px;
   font-size: 120%;
 }
-/* line 78, sass/partials/_layout.sass */
+/* line 86, sass/partials/_layout.sass */
 body.bp #container form.lookup input#title {
   width: 680px;
+}
+/* line 89, sass/partials/_layout.sass */
+body.bp h2 {
+  font-family: "Merriweather", arial, serif;
+  color: #444444;
+  font-size: 175%;
+}
+/* line 93, sass/partials/_layout.sass */
+body.bp h2.login_invitation {
+  padding: 0.5em;
+  font-style: italic;
+  background-color: #eeeeee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
+}
+/* line 99, sass/partials/_layout.sass */
+body.bp a.user {
+  padding-left: 14px;
+  background: url(../images/icons/user-icon.png) no-repeat 0 3px;
+}
+/* line 103, sass/partials/_layout.sass */
+body.bp .recent-users a.user, body.bp .recent-movies .movie {
+  margin-right: 10px;
+  display: inline;
+}
+/* line 108, sass/partials/_layout.sass */
+body.bp .recent .left {
+  float: left;
+  width: 50%;
+}
+/* line 111, sass/partials/_layout.sass */
+body.bp .recent .right {
+  float: left;
+  width: 50%;
 }

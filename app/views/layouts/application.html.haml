@@ -5,7 +5,7 @@
     %meta{'http-equiv'=>"Content-Type", 'content'=>"text/html; charset=utf-8"}
     %title Flickbar
     -#{AppConfig['app_name']}#{" - " + yield(:title) if content_for?(:title)}"
-    <link href='http://fonts.googleapis.com/css?family=Neuton' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather' rel='stylesheet' type='text/css'>
     = stylesheet_link_tag 'screen.css', :media => 'screen, projection'
     = stylesheet_link_tag 'print.css', :media => 'print'
     /[if IE]
@@ -22,7 +22,7 @@
           #user-navigation
             - if current_user
               %ul
-                %li= link_to current_user.name, user_path(current_user.nickname)
+                %li= link_to current_user.name, user_path(current_user.nickname), :class => 'user'
                 -#%li= link_to 'Logout', '#'
             - else
               = link_to 'Login', '/auth/facebook'
