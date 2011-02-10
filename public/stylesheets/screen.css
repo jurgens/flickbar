@@ -685,24 +685,24 @@ body.bp #container {
   width: 950px;
   margin: 0 auto;
 }
-/* line 53, sass/partials/_layout.sass */
+/* line 51, sass/partials/_layout.sass */
 body.bp #container #content {
   clear: both;
 }
-/* line 56, sass/partials/_layout.sass */
+/* line 54, sass/partials/_layout.sass */
 body.bp #container .watches {
   padding-top: 20px;
 }
-/* line 58, sass/partials/_layout.sass */
+/* line 56, sass/partials/_layout.sass */
 body.bp #container .watches .watch {
   margin-bottom: 20px;
 }
-/* line 60, sass/partials/_layout.sass */
+/* line 58, sass/partials/_layout.sass */
 body.bp #container .watches .watch .thumb {
   float: left;
   padding: 0 5px 5px 0;
 }
-/* line 63, sass/partials/_layout.sass */
+/* line 61, sass/partials/_layout.sass */
 body.bp #container .watches .watch .thumb img {
   border: 1px #eeeeee solid;
   -moz-border-radius: 5px;
@@ -713,25 +713,26 @@ body.bp #container .watches .watch .thumb img {
   border-radius: 5px;
   padding: 4px;
 }
-/* line 69, sass/partials/_layout.sass */
+/* line 67, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 {
   padding: 0;
   margin: 0;
+  font-size: 125%;
 }
-/* line 72, sass/partials/_layout.sass */
+/* line 71, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 .remove {
   display: none;
 }
-/* line 76, sass/partials/_layout.sass */
+/* line 75, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2:hover .remove {
   display: inline;
 }
-/* line 79, sass/partials/_layout.sass */
+/* line 78, sass/partials/_layout.sass */
 body.bp #container .watches .watch .ago {
   color: #999999;
   font-size: 11px;
 }
-/* line 83, sass/partials/_layout.sass */
+/* line 82, sass/partials/_layout.sass */
 body.bp #container form.lookup {
   background-color: #00b7cd;
   padding: 20px;
@@ -743,22 +744,22 @@ body.bp #container form.lookup {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 88, sass/partials/_layout.sass */
+/* line 87, sass/partials/_layout.sass */
 body.bp #container form.lookup input {
   padding: 4px;
   font-size: 120%;
 }
-/* line 91, sass/partials/_layout.sass */
+/* line 90, sass/partials/_layout.sass */
 body.bp #container form.lookup input#title {
   width: 680px;
 }
-/* line 94, sass/partials/_layout.sass */
+/* line 93, sass/partials/_layout.sass */
 body.bp h2 {
   font-family: "Merriweather", arial, serif;
   color: #444444;
   font-size: 175%;
 }
-/* line 98, sass/partials/_layout.sass */
+/* line 97, sass/partials/_layout.sass */
 body.bp h2.login_invitation {
   text-align: center;
   font-size: 125%;
@@ -772,31 +773,31 @@ body.bp h2.login_invitation {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 106, sass/partials/_layout.sass */
+/* line 105, sass/partials/_layout.sass */
 body.bp h2 sup, body.bp .movie sup {
   color: #66cc66;
   font-size: 12px;
 }
-/* line 110, sass/partials/_layout.sass */
+/* line 109, sass/partials/_layout.sass */
 body.bp .movie sup {
   font-size: 10px;
 }
-/* line 114, sass/partials/_layout.sass */
+/* line 113, sass/partials/_layout.sass */
 body.bp a.user {
   padding-left: 14px;
   background: url(../images/icons/user-icon.png) no-repeat 0 3px;
 }
-/* line 118, sass/partials/_layout.sass */
+/* line 117, sass/partials/_layout.sass */
 body.bp .recent-users a.user, body.bp .recent-movies .movie {
   margin-right: 10px;
   display: inline;
 }
-/* line 123, sass/partials/_layout.sass */
+/* line 122, sass/partials/_layout.sass */
 body.bp .recent .left {
   float: left;
   width: 50%;
 }
-/* line 126, sass/partials/_layout.sass */
+/* line 125, sass/partials/_layout.sass */
 body.bp .recent .right {
   float: left;
   width: 50%;

@@ -7,6 +7,6 @@ class Movie < ActiveRecord::Base
   scope :recently_watched, lambda { joins(:watches).select("DISTINCT movies.*").order("watches.created_at DESC").limit(25)}
 
   def self.find_or_create(title)
-    find_by_title(title) || create(:title => title.titleize)
+    find_by_title(title) || create(:title => title.capitalize)
   end
 end
