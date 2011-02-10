@@ -1,2 +1,8 @@
 
-= render :partial => 'shared/lookup'
+- if current_user
+  = render :partial => 'shared/lookup'
+- else
+  %p
+    Please
+    = link_to 'login', '/auth/facebook'
+    to start adding movies to your watch list 

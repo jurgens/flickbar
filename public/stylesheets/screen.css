@@ -569,29 +569,29 @@ html, body {
   height: 50px;
 }
 
-/* line 7, sass/partials/_layout.sass */
+/* line 8, sass/partials/_layout.sass */
 body.bp {
   font-size: 86%;
 }
-/* line 12, sass/partials/_layout.sass */
+/* line 13, sass/partials/_layout.sass */
 body.bp #header #logo {
   font-size: 3em;
-  font-family: "Neuton", arial, serif;
+  font-family: "Georgia", arial, serif;
   display: inline;
   float: left;
 }
-/* line 16, sass/partials/_layout.sass */
+/* line 17, sass/partials/_layout.sass */
 body.bp #header #logo a {
   color: #555588;
   text-decoration: none;
 }
-/* line 21, sass/partials/_layout.sass */
+/* line 22, sass/partials/_layout.sass */
 body.bp #header #user-navigation {
   margin-top: 1em;
   display: inline;
   float: right;
 }
-/* line 24, sass/partials/_layout.sass */
+/* line 25, sass/partials/_layout.sass */
 body.bp #header #user-navigation ul {
   margin: 0;
   padding: 0;
@@ -635,7 +635,7 @@ body.bp #header #user-navigation ul:first-child, body.bp #header #user-navigatio
 body.bp #header #user-navigation ul:last-child, body.bp #header #user-navigation ul.last {
   padding-right: 0;
 }
-/* line 29, sass/partials/_layout.sass */
+/* line 30, sass/partials/_layout.sass */
 body.bp #wrapper #header {
   display: inline;
   float: left;
@@ -647,7 +647,7 @@ body.bp #wrapper #header {
 * html body.bp #wrapper #header {
   overflow-x: hidden;
 }
-/* line 33, sass/partials/_layout.sass */
+/* line 34, sass/partials/_layout.sass */
 body.bp #footer {
   width: 950px;
   margin: 0 auto;
@@ -664,7 +664,7 @@ body.bp #footer {
 * html body.bp #footer {
   overflow-x: hidden;
 }
-/* line 40, sass/partials/_layout.sass */
+/* line 41, sass/partials/_layout.sass */
 body.bp #container {
   height: 100%;
   width: 950px;
@@ -672,43 +672,57 @@ body.bp #container {
   overflow: hidden;
   *zoom: 1;
 }
-/* line 44, sass/partials/_layout.sass */
+/* line 45, sass/partials/_layout.sass */
 body.bp #container #content {
   clear: both;
 }
-/* line 48, sass/partials/_layout.sass */
+/* line 49, sass/partials/_layout.sass */
 body.bp #container .watches .watch {
   margin-bottom: 20px;
 }
-/* line 50, sass/partials/_layout.sass */
+/* line 51, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 {
-  font-family: Neuton;
+  font-family: "Georgia", arial, serif;
   color: #444444;
   padding: 0;
   margin: 0;
 }
-/* line 55, sass/partials/_layout.sass */
+/* line 56, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 .remove {
   display: none;
 }
 /* line 59, sass/partials/_layout.sass */
+body.bp #container .watches .watch h2 sup {
+  color: #66cc66;
+  font-size: 12px;
+}
+/* line 64, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2:hover .remove {
   display: inline;
 }
-/* line 62, sass/partials/_layout.sass */
+/* line 67, sass/partials/_layout.sass */
 body.bp #container .watches .watch .ago {
   color: #999999;
+  font-size: 11px;
 }
-/* line 65, sass/partials/_layout.sass */
+/* line 71, sass/partials/_layout.sass */
 body.bp #container form.lookup {
+  background-color: #00b7cd;
+  padding: 20px;
   margin-bottom: 20px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -o-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -khtml-border-radius: 5px;
+  border-radius: 5px;
 }
-/* line 67, sass/partials/_layout.sass */
+/* line 76, sass/partials/_layout.sass */
 body.bp #container form.lookup input {
   padding: 4px;
   font-size: 120%;
 }
-/* line 70, sass/partials/_layout.sass */
+/* line 79, sass/partials/_layout.sass */
 body.bp #container form.lookup input#title {
-  width: 480px;
+  width: 680px;
 }

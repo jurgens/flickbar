@@ -9,6 +9,7 @@
       .watch
         %h2
           = watch.movie.title
+          %sup= watch.movie.users.count
           = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
         .ago
           = time_ago_in_words(watch.created_at)

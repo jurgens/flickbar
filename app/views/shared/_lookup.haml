@@ -1,5 +1,8 @@
 = form_tag '/watches', :class => 'lookup', :method => :post do
-  %label{:for => 'title'} What movie would you like to watch or already watched?
-  %br
-  = text_field_tag :title
+  = text_field_tag :title, '', :placeholder => 'What movie would you like to watch or already watched?'
   = submit_tag 'Add to my watch list'
+
+:javascript
+  $(function(){
+    $("#title").placeholder(); 
+  });

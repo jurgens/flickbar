@@ -1,6 +1,7 @@
 @import "compass/utilities/lists/horizontal-list"
 @import "compass/utilities/general/min"
 @import "compass/layout/sticky-footer"
+@import "compass/css3/border-radius"
 
 @include sticky-footer(50px, '#wrapper', '#wrapper-footer', '#footer')
 
@@ -11,7 +12,7 @@ body.bp
 
     #logo
       font-size: 3em
-      font-family: 'Neuton', arial, serif
+      font-family: 'Georgia', arial, serif
       +float-left
       a
         color: #558
@@ -48,12 +49,16 @@ body.bp
       .watch
         margin-bottom: 20px
         h2
-          font-family: Neuton
+          font-family: 'Georgia', arial, serif
           color: #444
           padding: 0
           margin: 0
           .remove
             display: none
+
+          sup
+            color: #6c6
+            font-size: 12px
 
         h2:hover
           .remove
@@ -61,11 +66,15 @@ body.bp
 
         .ago
           color: #999
+          font-size: 11px
 
     form.lookup
+      background-color: #00b7cd
+      padding: 20px
       margin-bottom: 20px
+      +border-radius
       input
         padding: 4px
         font-size: 120%
         &#title
-          width: 480px
+          width: 680px
