@@ -763,6 +763,8 @@ body.bp h2 {
 }
 /* line 96, sass/partials/_layout.sass */
 body.bp h2.login_invitation {
+  text-align: center;
+  font-size: 125%;
   padding: 0.5em;
   font-style: italic;
   background-color: #eeeeee;
@@ -773,31 +775,31 @@ body.bp h2.login_invitation {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 102, sass/partials/_layout.sass */
+/* line 104, sass/partials/_layout.sass */
 body.bp h2 sup, body.bp .movie sup {
   color: #66cc66;
   font-size: 12px;
 }
-/* line 106, sass/partials/_layout.sass */
+/* line 108, sass/partials/_layout.sass */
 body.bp .movie sup {
   font-size: 10px;
 }
-/* line 110, sass/partials/_layout.sass */
+/* line 112, sass/partials/_layout.sass */
 body.bp a.user {
   padding-left: 14px;
   background: url(../images/icons/user-icon.png) no-repeat 0 3px;
 }
-/* line 114, sass/partials/_layout.sass */
+/* line 116, sass/partials/_layout.sass */
 body.bp .recent-users a.user, body.bp .recent-movies .movie {
   margin-right: 10px;
   display: inline;
 }
-/* line 119, sass/partials/_layout.sass */
+/* line 121, sass/partials/_layout.sass */
 body.bp .recent .left {
   float: left;
   width: 50%;
 }
-/* line 122, sass/partials/_layout.sass */
+/* line 124, sass/partials/_layout.sass */
 body.bp .recent .right {
   float: left;
   width: 50%;
