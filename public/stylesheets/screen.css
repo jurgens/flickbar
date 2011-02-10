@@ -673,39 +673,36 @@ body.bp #footer {
   float: left;
   margin-right: 10px;
   width: 950px;
-  padding: 10px;
   text-align: center;
 }
 /* line 138, ../../../../../../usr/lib/ruby/gems/1.8/gems/compass-0.10.6/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html body.bp #footer {
   overflow-x: hidden;
 }
-/* line 47, sass/partials/_layout.sass */
+/* line 46, sass/partials/_layout.sass */
 body.bp #container {
   height: 100%;
   width: 950px;
   margin: 0 auto;
-  overflow: hidden;
-  *zoom: 1;
 }
-/* line 51, sass/partials/_layout.sass */
+/* line 53, sass/partials/_layout.sass */
 body.bp #container #content {
   clear: both;
 }
-/* line 54, sass/partials/_layout.sass */
+/* line 56, sass/partials/_layout.sass */
 body.bp #container .watches {
   padding-top: 20px;
 }
-/* line 56, sass/partials/_layout.sass */
+/* line 58, sass/partials/_layout.sass */
 body.bp #container .watches .watch {
   margin-bottom: 20px;
 }
-/* line 58, sass/partials/_layout.sass */
+/* line 60, sass/partials/_layout.sass */
 body.bp #container .watches .watch .thumb {
   float: left;
   padding: 0 5px 5px 0;
 }
-/* line 61, sass/partials/_layout.sass */
+/* line 63, sass/partials/_layout.sass */
 body.bp #container .watches .watch .thumb img {
   border: 1px #eeeeee solid;
   -moz-border-radius: 5px;
@@ -716,25 +713,25 @@ body.bp #container .watches .watch .thumb img {
   border-radius: 5px;
   padding: 4px;
 }
-/* line 67, sass/partials/_layout.sass */
+/* line 69, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 {
   padding: 0;
   margin: 0;
 }
-/* line 70, sass/partials/_layout.sass */
+/* line 72, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2 .remove {
   display: none;
 }
-/* line 74, sass/partials/_layout.sass */
+/* line 76, sass/partials/_layout.sass */
 body.bp #container .watches .watch h2:hover .remove {
   display: inline;
 }
-/* line 77, sass/partials/_layout.sass */
+/* line 79, sass/partials/_layout.sass */
 body.bp #container .watches .watch .ago {
   color: #999999;
   font-size: 11px;
 }
-/* line 81, sass/partials/_layout.sass */
+/* line 83, sass/partials/_layout.sass */
 body.bp #container form.lookup {
   background-color: #00b7cd;
   padding: 20px;
@@ -746,22 +743,22 @@ body.bp #container form.lookup {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 86, sass/partials/_layout.sass */
+/* line 88, sass/partials/_layout.sass */
 body.bp #container form.lookup input {
   padding: 4px;
   font-size: 120%;
 }
-/* line 89, sass/partials/_layout.sass */
+/* line 91, sass/partials/_layout.sass */
 body.bp #container form.lookup input#title {
   width: 680px;
 }
-/* line 92, sass/partials/_layout.sass */
+/* line 94, sass/partials/_layout.sass */
 body.bp h2 {
   font-family: "Merriweather", arial, serif;
   color: #444444;
   font-size: 175%;
 }
-/* line 96, sass/partials/_layout.sass */
+/* line 98, sass/partials/_layout.sass */
 body.bp h2.login_invitation {
   text-align: center;
   font-size: 125%;
@@ -775,31 +772,31 @@ body.bp h2.login_invitation {
   -khtml-border-radius: 5px;
   border-radius: 5px;
 }
-/* line 104, sass/partials/_layout.sass */
+/* line 106, sass/partials/_layout.sass */
 body.bp h2 sup, body.bp .movie sup {
   color: #66cc66;
   font-size: 12px;
 }
-/* line 108, sass/partials/_layout.sass */
+/* line 110, sass/partials/_layout.sass */
 body.bp .movie sup {
   font-size: 10px;
 }
-/* line 112, sass/partials/_layout.sass */
+/* line 114, sass/partials/_layout.sass */
 body.bp a.user {
   padding-left: 14px;
   background: url(../images/icons/user-icon.png) no-repeat 0 3px;
 }
-/* line 116, sass/partials/_layout.sass */
+/* line 118, sass/partials/_layout.sass */
 body.bp .recent-users a.user, body.bp .recent-movies .movie {
   margin-right: 10px;
   display: inline;
 }
-/* line 121, sass/partials/_layout.sass */
+/* line 123, sass/partials/_layout.sass */
 body.bp .recent .left {
   float: left;
   width: 50%;
 }
-/* line 124, sass/partials/_layout.sass */
+/* line 126, sass/partials/_layout.sass */
 body.bp .recent .right {
   float: left;
   width: 50%;
