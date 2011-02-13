@@ -8,6 +8,13 @@ GIT
       orm_adapter (~> 0.0.2)
       warden (~> 1.0.0)
 
+GIT
+  remote: https://github.com/tolosa/imdb.git
+  revision: 096ebf20edfc0f75ca8c2e4e41e3d5c021a868fa
+  specs:
+    imdb (0.6.5)
+      hpricot (>= 0.8.1)
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -93,6 +100,7 @@ GEM
       json (~> 1.4.6)
     haml (3.0.25)
     highline (1.6.1)
+    hpricot (0.8.3)
     i18n (0.5.0)
     jquery-rails (0.2.7)
       rails (~> 3.0)
@@ -159,6 +167,9 @@ GEM
       oa-oauth (= 0.1.6)
       oa-openid (= 0.1.6)
     orm_adapter (0.0.4)
+    paperclip (2.3.8)
+      activerecord
+      activesupport
     polyglot (0.3.1)
     pyu-ruby-sasl (0.0.3.2)
     rack (1.2.1)
@@ -231,11 +242,13 @@ DEPENDENCIES
   devise!
   factory_girl_rails
   haml
+  imdb!
   jquery-rails
   launchy
   mongrel
   mysql2
   omniauth
+  paperclip
   rails (~> 3.0.0)
   rspec-rails
   shoulda

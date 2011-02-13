@@ -8,6 +8,8 @@ gem 'omniauth'
 gem 'haml'
 gem 'devise',:git => 'https://github.com/plataformatec/devise.git', :branch => 'v1.2.oauth'
 gem 'compass'
+gem 'imdb', :git => 'https://github.com/tolosa/imdb.git'
+gem 'paperclip'
 #gem 'oa-oauth', :require => 'omniauth/oauth'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)

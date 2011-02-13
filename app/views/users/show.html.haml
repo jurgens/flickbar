@@ -7,13 +7,19 @@
   .watches
     - @watches.each do |watch|
       .watch
+        .ago
+          added
+          = time_ago_in_words(watch.created_at)
+          ago
+          - if current_user == @account
+            = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
         .thumb
-          = image_tag 'icons/movie.jpg'
+          = image_tag watch.movie.poster.url(:thumb)
         %h2
           = watch.movie.title
           %sup= watch.movie.users.count
-          - if current_user == @account
-            = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
-        .ago
-          = time_ago_in_words(watch.created_at)
-          ago
+        - if watch.movie.director.present?
+          .director
+            by
+            %span.name= watch.movie.director
+

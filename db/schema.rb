@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110209225154) do
+ActiveRecord::Schema.define(:version => 20110212232431) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -25,6 +25,12 @@ ActiveRecord::Schema.define(:version => 20110209225154) do
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "imdb_not_found",                                 :default => false
+    t.string   "imdb_id"
+    t.string   "director"
+    t.string   "poster_file_name"
+    t.decimal  "rating",           :precision => 3, :scale => 1
+    t.date     "release_date"
   end
 
   create_table "users", :force => true do |t|

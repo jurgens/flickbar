@@ -6,3 +6,4 @@ config/database.yml
 public/stylesheets/ie.css
 public/stylesheets/print.css
 public/stylesheets/screen.css
+public/assets/*

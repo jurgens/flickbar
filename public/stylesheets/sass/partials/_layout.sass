@@ -20,7 +20,7 @@ body.bp
     #logo
       margin-top: 10px
       font-size: 200%
-      font-family: 'Merriweather', arial, serif
+      font-family: 'Merriweather', Georgia, sans-serif
       letter-spacing: 0px
       text-transform: lowercase
       +float-left
@@ -55,11 +55,13 @@ body.bp
       padding-top: 20px
       .watch
         margin-bottom: 20px
+        overflow: hidden
         .thumb
           float: left
           padding: 0 5px 5px 0
           img
             border: 1px #eee solid
+            width: 33px
             +border-radius
 
             padding: 4px
@@ -68,16 +70,25 @@ body.bp
           padding: 0
           margin: 0
           font-size: 125%
-          .remove
-            display: none
 
-        h2:hover
+
+        &:hover
           .remove
             display: inline
-
+            img
+              vertical-align: middle
+        .remove
+          display: none
         .ago
           color: #999
           font-size: 11px
+          line-height: 18px
+
+        .director
+          line-height: 100%
+          color: #999
+          .name
+            color: #333 
 
     form.lookup
       background-color: #00b7cd
