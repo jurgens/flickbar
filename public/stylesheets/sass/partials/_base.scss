@@ -5,6 +5,12 @@ $blueprint-grid-columns: 24;
 $blueprint-container-size: 950px;
 $blueprint-grid-margin: 10px;
 
+$blueprint-button-background-color: #F0F0CC;
+$blueprint-button-border-color: #000;
+$blueprint-button-hover-border-color: #444;
+$blueprint-button-font-color: #333;
+$blueprint-button-hover-background-color: #CCC;
+
 // Use this to calculate the width based on the total width.
 // Or you can set $blueprint-grid-width to a fixed value and unset $blueprint-container-size -- it will be calculated for you.
 $blueprint-grid-width: ($blueprint-container-size + $blueprint-grid-margin) / $blueprint-grid-columns - $blueprint-grid-margin;

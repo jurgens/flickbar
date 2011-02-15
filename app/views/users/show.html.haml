@@ -1,6 +1,9 @@
 
 = render :partial => 'shared/lookup' #if current_user == @account
 
+= content_for :sidebar do
+  = render :partial => 'shared/friendship', :locals => { :visitor => current_user, :user => @account }
+
 - if @watches.empty?
   no movies
 - else

@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   has_many :authorizations
   has_many :watches
+  has_many :friendships
+  has_many :friends, :through => :friendships, :class_name => 'User'
   
   devise :omniauthable
 
@@ -14,5 +16,9 @@ class User < ActiveRecord::Base
       nick = hash['user_info']['name'].split(' ').map(&:downcase).join('.')
     end
     create(:name => hash['user_info']['name'], :nickname => nick)
+  end
+
+  def friendship_with(user)
+    self.friendships.find_by_friend_id user.id
   end
 end

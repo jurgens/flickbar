@@ -1,8 +1,9 @@
-= form_tag '/watches', :class => 'lookup', :method => :post do
-  = text_field_tag :title, '', :placeholder => 'What movie would you like to watch or already watched?'
-  = submit_tag 'Add to my watch list'
+= content_for :top_content do
+  = form_tag '/watches', :class => 'lookup', :method => :post do
+    = text_field_tag :title, '', :placeholder => 'What movie would you like to watch or already watched?'
+    = submit_tag 'Add to my watch list'
 
-:javascript
-  $(function(){
-    $("#title").placeholder(); 
-  });
+  :javascript
+    $(function(){
+      $("#title").placeholder();
+    });

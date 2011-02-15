@@ -7,6 +7,7 @@ Flickbar2::Application.routes.draw do
   root :to => 'home#index'
 
   resources :watches
+  resources :friendships
 
   devise_for :users
 

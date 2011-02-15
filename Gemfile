@@ -10,6 +10,7 @@ gem 'devise',:git => 'https://github.com/plataformatec/devise.git', :branch => '
 gem 'compass'
 gem 'imdb', :git => 'https://github.com/tolosa/imdb.git'
 gem 'paperclip'
+gem 'fancy-buttons'
 #gem 'oa-oauth', :require => 'omniauth/oauth'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)

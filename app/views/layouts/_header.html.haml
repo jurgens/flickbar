@@ -1,0 +1,10 @@
+#header
+  #logo= link_to 'flickbar', root_path
+
+  #user-navigation
+    - if current_user
+      %ul
+        %li= link_to current_user.name, user_path(current_user.nickname), :class => 'user'
+        -#%li= link_to 'Logout', '#'
+    - else
+      = link_to 'Login', '/auth/facebook'

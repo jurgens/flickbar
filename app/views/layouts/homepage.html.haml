@@ -9,14 +9,10 @@
 
         #top-content
           = yield :top_content
+          
+        #content.homepage
           = flash_messages
-
-        #content
           = yield
-
-        #sidebar
-          = yield :sidebar
-
 
         #wrapper-footer
 
