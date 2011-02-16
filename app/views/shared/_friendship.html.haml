@@ -4,8 +4,9 @@
   - if visitor == user
     your page
   - else
+    %h2= user.name 
     - friendship = visitor.friendship_with user
     - if friendship.nil?
-      = link_to 'Add to Friends', friendships_path(:friend_id => user.id), :method => :post, :class => 'button'
+      = link_to 'Add to friends', friendships_path(:friend_id => user.id), :method => :post, :class => 'button'
     - else
-      = link_to 'Remove a Friend', friendship_path(friendship), :method => :delete, :confirm => 'Are you sure?', :class => 'button'
+      = link_to 'Remove from friends', friendship_path(friendship), :method => :delete, :confirm => 'Are you sure?', :class => 'button'
