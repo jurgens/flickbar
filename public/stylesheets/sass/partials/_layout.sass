@@ -50,6 +50,8 @@ body.bp
       padding-top: 20px
       $sidebar-columns: floor($blueprint-grid-columns / 3)
       @include column($sidebar-columns)
+      .content
+        padding: 0 10px
 
     #top-content
       @include column($blueprint-grid-columns, true)
@@ -66,8 +68,37 @@ body.bp
     .watches
       padding-top: 20px
       .watch
-        margin-bottom: 20px
+        margin-bottom: 10px
         overflow: hidden
+        position: relative
+        .controls
+          list-style: none
+          position: absolute
+          right: 0
+          top: 24px
+          li
+            float: left
+            margin: 0 2px
+            a
+              cursor: pointer
+              display: block
+              width: 12px
+              height: 12px
+              background-position: 0 0
+              background-repeat: no-repeat
+              text-indent: -9999px
+              &.wish
+                background-image: url(/images/iconic/star-grey.png)
+              &.wish.active, &.wish:hover
+                background-image: url(/images/iconic/star-blue.png)
+              &.watched
+                background-image: url(/images/iconic/check-grey.png)
+              &.watched.active, &.watched:hover
+                background-image: url(/images/iconic/check-blue.png)
+              &.delete
+                background-image: url(/images/iconic/x-grey.png)
+              &.delete.active, &.delete:hover
+                background-image: url(/images/iconic/x-blue.png)
         .thumb
           float: left
           padding: 0 5px 5px 0

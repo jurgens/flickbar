@@ -1,0 +1,27 @@
+.watch{:id => "watch_#{watch.id}"}
+  .ago
+    added
+    = time_ago_in_words(watch.created_at)
+    ago
+  .thumb
+    = image_tag watch.movie.poster.url(:thumb)
+  %h2
+    = watch.movie.title
+    %sup= watch.movie.users.count
+  - if watch.movie.director.present?
+    .director
+      by
+      %span.name= watch.movie.director
+  - if is_owner
+    %ul.controls.owner
+      %li
+        %a.wish{:class => watch.watched? ? '' : 'active'} Wish
+      %li
+        %a.watched{:class => watch.watched? ? 'active' : ''} Watched
+      %li
+        = link_to 'remove', watch_path(watch), :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
+  - else
+    %ul.controls
+      %li
+        - already_listed = current_user.movie_ids.include?(watch.movie.id)
+        = link_to 'Add to Wish list', watches_path(:movie_id => watch.movie.id), :class => 'wish' + (already_listed ? ' active' : ''), :method => :post, :remote => true, :title => already_listed ? 'You have movie in your list' : 'Add a movie to your wish list'

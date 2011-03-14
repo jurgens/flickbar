@@ -9,12 +9,12 @@ describe WatchesController do
 
   describe "create" do
     before do
-      Watch.should_receive(:create)
       request.env["HTTP_REFERER"] = '/back'
       post :create, :title => 'Some movie title'
     end
 
+    it { assigns[:movie] }
+    it { assigns[:watch] }
     it { should respond_with :redirect }
-
   end
 end

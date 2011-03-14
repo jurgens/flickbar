@@ -7,6 +7,10 @@ class UsersController < ApplicationController
     @watches = @account.watches
   end
 
+  def news
+
+  end
+
 protected
 
   def find_account

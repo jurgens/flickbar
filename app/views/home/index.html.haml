@@ -1,11 +1,5 @@
 
-- if current_user
-  = render :partial => 'shared/lookup'
-- else
-  %h2.login_invitation
-    Please
-    = link_to 'login', '/auth/facebook'
-    to start adding movies to your watch list
+= render :partial => 'shared/lookup'
 
 .recent
   .left

@@ -2,16 +2,29 @@ Flickbar2::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  match '/auth/:provider/callback', :to => 'sessions#create'
-
   root :to => 'home#index'
 
-  resources :watches
+  devise_for :users, :controllers => { :omniauth_callbacks => "authorizations" } do
+#    get 'sign_in', :to => 'sessions#new', :as => :new_user_session
+    get 'sign_out', :to => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+  resources :watches do
+    member do
+      post :watched
+      post :wish
+    end
+  end
   resources :friendships
 
-  devise_for :users
 
+  match '/news', :to => 'users#news', :as => 'news'
+
+  #  the last route
   match '/:nickname', :to => 'users#show', :as => 'user', :constraints => {:nickname => /.+/}
+
+
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -8,7 +8,7 @@ class Authorization < ActiveRecord::Base
   end
   
   def self.create_from_hash(hash, user = nil)
-    user ||= User.create_from_hash!(hash)
+    user ||= User.find_for_facebook_oauth(hash)
     Authorization.create(:user => user, :uid => hash['uid'], :provider => hash['provider'])
   end
 end

@@ -3,7 +3,7 @@
 Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in DeviseMailer.
-  config.mailer_sender = "support@example.org"
+  config.mailer_sender = "please-change-me@config-initializers-devise.com"
 
   # Configure the class responsible to send e-mails.
   # config.mailer = "Devise::Mailer"
@@ -112,7 +112,7 @@ Devise.setup do |config|
   # config.encryptor = :sha512
 
   # Setup a pepper to generate the encrypted password.
-  config.pepper = "8a420fbf3172a38c5597a08f6b013e690ffadcffc96848dfa17e7985df406d8a59be4ac8c839566824e45baf9fd98fd35ab3ac41cbf530c22de47770bae916cf"
+  config.pepper = "a7a73279ce723df63b8c92210f8a50ecb5234d5d0f4d2daf61c5f1473f420c91a7c3f894ad8e9b58060acfb5755e5b91b122ddead103e63d94905023a2355ee9"
 
   # ==> Configuration for :token_authenticatable
   # Defines name of the authentication token params key
@@ -151,11 +151,14 @@ Devise.setup do |config|
   # ==> OAuth2
   # Add a new OAuth2 provider. Check the README for more information on setting
   # up on your models and hooks. By default this is not set.
-#  config.oauth :facebook, '2c29ede829e80f949e57f2be80f2a2a1', '15d3b7f2495459000bb847fbb888742d',
-#     :site              => 'https://graph.facebook.com/',
-#     :authorize_path    => '/oauth/authorize',
-#     :access_token_path => '/oauth/access_token'
-#     :scope             => %w(user public_repo)
+  # config.oauth :github, 'APP_ID', 'APP_SECRET',
+  #   :site              => 'https://github.com/',
+  #   :authorize_path    => '/login/oauth/authorize',
+  #   :access_token_path => '/login/oauth/access_token',
+  #   :scope             => %w(user public_repo)
+
+  config.omniauth :facebook, '2c29ede829e80f949e57f2be80f2a2a1', '15d3b7f2495459000bb847fbb888742d'
+#    :site => 'http://facebook.com'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

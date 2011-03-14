@@ -9,9 +9,10 @@ describe FriendshipsController do
 
   describe "create" do
     before do
+      request.env["HTTP_REFERER"] = 'back'
       post :create, :friend_id => @friend.id 
     end
 
-    it { should respond_with :success }
+    it { should respond_with :redirect }
   end
 end

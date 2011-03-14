@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110215165059) do
+ActiveRecord::Schema.define(:version => 20110313100224) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -35,12 +35,12 @@ ActiveRecord::Schema.define(:version => 20110215165059) do
     t.integer  "year"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "imdb_not_found",                                 :default => false
     t.string   "imdb_id"
     t.string   "director"
     t.string   "poster_file_name"
     t.decimal  "rating",           :precision => 3, :scale => 1
     t.date     "release_date"
+    t.boolean  "imdb_not_found",                                 :default => false
   end
 
   create_table "users", :force => true do |t|
@@ -48,6 +48,9 @@ ActiveRecord::Schema.define(:version => 20110215165059) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "nickname"
+    t.string   "remember_token"
+    t.datetime "remember_created_at"
+    t.string   "email"
   end
 
   add_index "users", ["nickname"], :name => "index_users_on_nickname", :unique => true
@@ -57,6 +60,7 @@ ActiveRecord::Schema.define(:version => 20110215165059) do
     t.integer  "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "watched",    :default => false
   end
 
   add_index "watches", ["movie_id"], :name => "index_watches_on_movie_id"

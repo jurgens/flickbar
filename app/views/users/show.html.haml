@@ -1,5 +1,5 @@
 
-= render :partial => 'shared/lookup' #if current_user == @account
+= render :partial => 'shared/lookup'
 
 = content_for :sidebar do
   = render :partial => 'shared/friendship', :locals => { :visitor => current_user, :user => @account }
@@ -9,20 +9,4 @@
 - else
   .watches
     - @watches.each do |watch|
-      .watch
-        .ago
-          added
-          = time_ago_in_words(watch.created_at)
-          ago
-          - if current_user == @account
-            = link_to image_tag('icons/cross-small.png'), watch_path(watch), :class => 'remove', :method => :delete, :confirm => 'Are you sure?'
-        .thumb
-          = image_tag watch.movie.poster.url(:thumb)
-        %h2
-          = watch.movie.title
-          %sup= watch.movie.users.count
-        - if watch.movie.director.present?
-          .director
-            by
-            %span.name= watch.movie.director
-
+      = render :partial => 'watch', :locals => { :watch => watch, :is_owner => current_user == @account }

@@ -2,8 +2,8 @@ class Movie < ActiveRecord::Base
 
   has_attached_file :poster, 
         :styles => {:thumb => "33x50#", :small => "118x140>"},
-        :url => "/assets/:class/:attachment/:id/:style_:basename.:extension",
-        :path => ":rails_root/public/assets/:class/:attachment/:id/:style_:basename.:extension",
+        :url => "/system/assets/:class/:attachment/:id/:style_:basename.:extension",
+        :path => ":rails_root/public/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :default_url => "/images/missing_:class_:style.jpg"
 
   has_many :watches
@@ -15,7 +15,7 @@ class Movie < ActiveRecord::Base
   scope :pending_imdb, where("imdb_not_found = 0").where("imdb_id IS NULL")
 
   def self.find_or_create(title)
-    find_by_title(title) || create(:title => title.capitalize)
+    find_by_title(title) || create(:title => title)
   end
 
   def imdb_search
