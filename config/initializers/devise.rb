@@ -157,7 +157,7 @@ Devise.setup do |config|
   #   :access_token_path => '/login/oauth/access_token',
   #   :scope             => %w(user public_repo)
 
-  config.omniauth :facebook, '2c29ede829e80f949e57f2be80f2a2a1', '15d3b7f2495459000bb847fbb888742d'
+  config.omniauth :facebook, AppConfig['facebook_api_key'], AppConfig['facebook_api_secret']
 #    :site => 'http://facebook.com'
 
   # ==> Warden configuration
