@@ -1,3 +1,5 @@
+
+# load config
 AppConfig = YAML.load_file(Rails.root.join('config', 'config.yml'))
 
 # Override config options by correct environment
