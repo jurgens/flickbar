@@ -41,6 +41,10 @@ class User < ActiveRecord::Base
     self.friendships.find_by_friend_id user.id
   end
 
+  def remember_me
+    true
+  end
+
 #  def friend_watches
 #    user_ids = self.friend_ids
 #  end
