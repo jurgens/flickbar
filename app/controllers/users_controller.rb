@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-#  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :only => [:news]
   before_filter :find_owner, :only => [:show]
 
   def show
