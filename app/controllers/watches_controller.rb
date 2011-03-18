@@ -11,8 +11,6 @@ class WatchesController < ApplicationController
 
     @watch = @movie.watches.build :user_id => current_user.id
 
-    logger.debug @watch.inspect
-
     if @watch.save
       respond_to do |f|
         f.html {
@@ -32,6 +30,18 @@ class WatchesController < ApplicationController
         f.js {
           render :action => :failure
         }
+      end
+    end
+  end
+
+  def copy
+    @watch = Watch.find params[:id]
+    unless @watch.nil?
+      @new_watch = current_user.watches.build :movie_id => @watch.movie_id
+      if @new_watch.save
+        respond_to do |f|
+          f.js { render :action => :create }
+        end
       end
     end
   end

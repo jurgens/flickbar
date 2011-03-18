@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
     end
   end
 
-  def friendship_with(user)
+  def in_friendship_with(user)
     self.friendships.find_by_friend_id user.id
   end
 
@@ -45,7 +45,8 @@ class User < ActiveRecord::Base
     true
   end
 
-#  def friend_watches
-#    user_ids = self.friend_ids
-#  end
+  def news(limit)
+    user_ids = self.friend_ids + [self.id]
+    Watch.where(:user_id => user_ids).limit(limit)
+  end
 end

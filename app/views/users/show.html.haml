@@ -2,11 +2,11 @@
 = render :partial => 'shared/lookup'
 
 = content_for :sidebar do
-  = render :partial => 'shared/friendship', :locals => { :visitor => current_user, :user => @account }
+  = render :partial => 'shared/friendship', :locals => { :visitor => current_user, :owner => @owner }
 
 - if @watches.empty?
   no movies
 - else
   .watches
     - @watches.each do |watch|
-      = render :partial => 'watch', :locals => { :watch => watch, :is_owner => current_user == @account }
+      = render :partial => 'shared/watch', :locals => { :watch => watch, :owner => @owner }

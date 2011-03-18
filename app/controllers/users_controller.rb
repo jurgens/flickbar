@@ -1,20 +1,20 @@
 class UsersController < ApplicationController
 
 #  before_filter :authenticate_user!
-  before_filter :find_account, :only => [:show]
+  before_filter :find_owner, :only => [:show]
 
   def show
-    @watches = @account.watches
+    @watches = @owner.watches
   end
 
   def news
-
+    @news = current_user.news(50)
   end
 
 protected
 
-  def find_account
-    @account = User.find_by_nickname(params[:nickname])
-    render :text => '404: page not found', :status => 404 and return if @account.blank?
+  def find_owner
+    @owner = User.find_by_nickname(params[:nickname])
+    render :text => '404: page not found', :status => 404 and return if @owner.blank?
   end
 end

@@ -5,7 +5,7 @@
     - if current_user
       %ul
         %li= link_to current_user.name, user_path(current_user.nickname), :class => 'user'
-        -#%li= link_to 'News', news_path
+        %li= link_to 'News', news_path
         %li= link_to 'Sign Out', '/sign_out'
     - else
       = link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook)

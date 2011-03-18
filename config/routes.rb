@@ -13,8 +13,10 @@ Flickbar2::Application.routes.draw do
     member do
       post :watched
       post :wish
+      post :copy
     end
   end
+
   resources :friendships
 
 

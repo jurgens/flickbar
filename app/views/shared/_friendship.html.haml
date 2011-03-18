@@ -1,12 +1,12 @@
 
 - unless visitor.blank?
 
-  - if visitor == user
+  - if visitor == owner
     your page
   - else
-    %h2= user.name 
-    - friendship = visitor.friendship_with user
+    %h2= owner.name
+    - friendship = visitor.in_friendship_with owner
     - if friendship.nil?
-      = link_to 'Add to friends', friendships_path(:friend_id => user.id), :method => :post, :class => 'button'
+      = link_to 'Add to friends', friendships_path(:friend_id => owner.id), :method => :post, :class => 'button'
     - else
       = link_to 'Remove from friends', friendship_path(friendship), :method => :delete, :confirm => 'Are you sure?', :class => 'button'

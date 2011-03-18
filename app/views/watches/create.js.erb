@@ -1,1 +1,1 @@
-$("#watch_<%=@watch.id%>").replaceWith("<%= escape_javascript(render :partial => 'users/watch', :locals => {:watch => @watch, :is_owner => current_user == @account })%>");
+$("#watch_<%=@watch.id%>").replaceWith("<%= escape_javascript(render :partial => 'shared/watch', :locals => {:watch => @watch, :owner => @watch.user })%>");

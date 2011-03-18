@@ -1,0 +1,15 @@
+.watch{:id => "watch_#{watch.id}"}
+  .ago
+    = watch.user.name
+    added
+    = time_ago_in_words(watch.created_at)
+    ago
+  .thumb
+    = image_tag watch.movie.poster.url(:thumb)
+  %h2
+    = watch.movie.title
+    %sup= watch.movie.users.count
+  - if watch.movie.director.present?
+    .director
+      by
+      %span.name= watch.movie.director

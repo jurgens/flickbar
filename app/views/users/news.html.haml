@@ -1,1 +1,8 @@
 = render :partial => 'shared/lookup'
+
+- if @news.empty?
+  no news
+- else
+  .watches
+    - @news.each do |watch|
+      = render :partial => 'shared/news-item', :locals => { :watch => watch }

@@ -1,3 +1,5 @@
+- is_owner = current_user == owner if user_signed_in?
+
 .watch{:id => "watch_#{watch.id}"}
   .ago
     added
@@ -20,8 +22,12 @@
         %a.watched{:class => watch.watched? ? 'active' : ''} Watched
       %li
         = link_to 'remove', watch_path(watch), :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
-  - elsif !!current_user  
+  - elsif user_signed_in?
     %ul.controls
       %li
         - already_listed = current_user.movie_ids.include?(watch.movie.id)
-        = link_to 'Add to Wish list', watches_path(:movie_id => watch.movie.id), :class => 'wish' + (already_listed ? ' active' : ''), :method => :post, :remote => true, :title => already_listed ? 'You have movie in your list' : 'Add a movie to your wish list'
+        = link_to 'Add to Wish list', copy_watch_path(watch),
+            :class => 'wish' + (already_listed ? ' active' : ''),
+            :method => :post,
+            :remote => true,
+            :title => already_listed ? 'You already have this movie in your list' : 'Add a movie to your wish list'
