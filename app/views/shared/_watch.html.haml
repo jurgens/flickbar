@@ -17,11 +17,11 @@
   - if is_owner
     %ul.controls.owner
       %li
-        %a.wish{:class => watch.watched? ? '' : 'active'} Wish
+        %a.wish{:title => 'Wish', :class => watch.watched? ? '' : 'active'} Wish
       %li
-        %a.watched{:class => watch.watched? ? 'active' : ''} Watched
+        %a.watched{:title => 'Watched', :class => watch.watched? ? 'active' : ''} Watched
       %li
-        = link_to 'remove', watch_path(watch), :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
+        = link_to 'remove', watch_path(watch), :title => 'Delete', :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
   - elsif user_signed_in?
     %ul.controls
       %li
