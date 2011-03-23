@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
 
   has_attached_file :poster,
-        :styles => {:thumb => "33x50#", :small => "118x140>"},
+        :styles => {:thumb => "33x50#", :small => "100x140>"},
         :url => "/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :path => ":rails_root/public/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :default_url => "/images/missing_:class_:style.jpg"
@@ -11,7 +11,7 @@ class Movie < ActiveRecord::Base
 
   validates :title, :presence => true
 
-  scope :recently_watched, lambda { joins(:watches).select("DISTINCT movies.*").order("watches.created_at DESC").limit(25)}
+  scope :recently_watched, lambda { joins(:watches).select("DISTINCT movies.*").order("watches.created_at DESC").limit(20)}
   scope :pending_imdb, where("imdb_not_found = 0").where("imdb_id IS NULL")
 
   def self.find_or_create(title)
