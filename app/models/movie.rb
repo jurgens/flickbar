@@ -1,6 +1,6 @@
 class Movie < ActiveRecord::Base
 
-  has_attached_file :poster, 
+  has_attached_file :poster,
         :styles => {:thumb => "33x50#", :small => "118x140>"},
         :url => "/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :path => ":rails_root/public/system/assets/:class/:attachment/:id/:style_:basename.:extension",
@@ -22,12 +22,12 @@ class Movie < ActiveRecord::Base
     begin
       search = Imdb::Search.new(self.title)
       self.imdb_not_found = true
-      
+
       movie = search.movies.first
       if movie.title(true).downcase == self.title.downcase
         self.imdb_id  = movie.id
         self.director = movie.director.join(', ')
-        self.poster = download_from_url(movie.poster) unless movie.poster.blank? 
+        self.poster = download_from_url(movie.poster) unless movie.poster.blank?
         [:rating, :year].each do |attr|
           self.send "#{attr}=", movie.send(attr)
         end
@@ -39,6 +39,8 @@ class Movie < ActiveRecord::Base
 
     save
   end
+
+protected
 
   def download_from_url(url)
     io = open(URI.parse(url))

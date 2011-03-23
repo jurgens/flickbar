@@ -15,6 +15,7 @@ gem 'fancy-buttons'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'metric_fu'
 end
 
 group :development do 
@@ -22,6 +23,7 @@ group :development do
 end
 
 group :test do
+  gem 'fuubar'
   gem 'cucumber'
   gem 'cucumber-rails'
   gem 'capybara'

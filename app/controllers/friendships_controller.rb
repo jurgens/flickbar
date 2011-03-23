@@ -5,20 +5,12 @@ class FriendshipsController < ApplicationController
     @friendship = current_user.friendships.build :friend_id => @friend.id
 
     if @friendship.save
-      respond_to do |f|
-        f.html {
-          flash[:notice] = "You have added #{@friend.nickname} to your friends."
-          redirect_to :back
-        }
-      end
+      flash[:notice] = "You have added #{@friend.nickname} to your friends."
     else
-      respond_to do |f|
-        f.html {
-          flash[:error] = "Error adding a friend"
-          redirect_to :back
-        }
-      end
+      flash[:error] = "Error adding a friend"
     end
+
+    redirect_to :back
   end
 
   def destroy
@@ -29,6 +21,7 @@ class FriendshipsController < ApplicationController
     else
       flash[:error] = 'Error'
     end
+
     redirect_to :back
   end
 end

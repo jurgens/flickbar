@@ -16,3 +16,8 @@ Factory.define :watch do |f|
   f.association :user
   f.association :movie
 end
+
+Factory.define :friendship do |f|
+  f.association :user
+  f.association :friend, :factory => :user
+end

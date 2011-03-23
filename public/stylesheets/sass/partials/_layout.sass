@@ -5,6 +5,10 @@
 body.bp
   font-size: 86%
 
+  ul
+    +no-bullets
+    padding-left: 0px
+
   .flash
     .message
       +border-radius
@@ -64,7 +68,7 @@ body.bp
 
       &.homepage
         @include column($blueprint-grid-columns, true)
-        
+
     .watches
       padding-top: 20px
       .watch
@@ -131,7 +135,7 @@ body.bp
           line-height: 100%
           color: #999
           .name
-            color: #333 
+            color: #333
 
     form.lookup
       background-color: #00b7cd
@@ -155,7 +159,7 @@ body.bp
       font-style: italic
       background-color: #eee
       +border-radius
-  
+
   h2 sup, .movie sup
     color: #6c6
     font-size: 12px
@@ -171,7 +175,7 @@ body.bp
   .recent-users a.user, .recent-movies .movie
     margin-right: 10px
     display: inline
-  
+
   .recent
     .left
       float: left

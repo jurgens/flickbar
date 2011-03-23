@@ -1,6 +1,8 @@
 class WatchesController < ApplicationController
 
   before_filter :authenticate_user!
+  before_filter :load_user
+  before_filter :load_watch, :only => [:destroy, :watched, :wish]
 
   def create
     unless params[:movie_id].blank?
@@ -9,54 +11,40 @@ class WatchesController < ApplicationController
       @movie = Movie.find_or_create params[:title]
     end
 
-    @watch = @movie.watches.build :user_id => current_user.id
+    @watch = @movie.watches.build :user_id => @user.id
 
-    if @watch.save
-      respond_to do |f|
-        f.html {
-          flash[:notice] = "Successfully added \"#{@watch.movie.title}\" to your list" 
-          redirect_to user_path(current_user.nickname)
-        }
-        f.js {
+    success = @watch.save
 
-        }
-      end
-    else
-      respond_to do |f|
-        f.html {
-          flash[:error] = 'Error: ' + @watch.errors.full_messages.join(' ')
-          redirect_to user_path(current_user.nickname)
-        }
-        f.js {
-          render :action => :failure
-        }
-      end
+    respond_to do |format|
+      format.html {
+        flash[:notice] = success ? "Successfully added \"#{@watch.movie_title}\" to your list" : 'Error: ' + @watch.errors.full_messages.join(' ')
+        redirect_to user_path(@user.nickname)
+      }
+      format.js {
+        render :action => :failure unless success
+      }
     end
   end
 
   def copy
     @watch = Watch.find params[:id]
-    unless @watch.nil?
-      @new_watch = current_user.watches.build :movie_id => @watch.movie_id
-      if @new_watch.save
-        respond_to do |f|
-          f.js { render :action => :create }
-        end
+    @new_watch = @user.watches.build :movie_id => @watch.movie_id
+    if @new_watch.save
+      respond_to do |format|
+        flash[:notice] = 'Successfully added a movie to your list'
+        format.js { render :action => :create }
       end
     end
   end
 
   def destroy
-    watch = current_user.watches.find(params[:id])
-
-    if watch.destroy
+    if @watch.destroy
       flash[:notice] = 'Successfully removed movie from your watch list'
       redirect_to :back
     end
   end
 
   def watched
-    @watch = current_user.watches.find(params[:id])
     @watch.update_attribute :watched, true
 
     respond_to do |format|
@@ -65,7 +53,6 @@ class WatchesController < ApplicationController
   end
 
   def wish
-    @watch = current_user.watches.find(params[:id])
     @watch.update_attribute :watched, false
 
     respond_to do |format|
@@ -73,4 +60,13 @@ class WatchesController < ApplicationController
     end
   end
 
+protected
+
+  def load_watch
+    @watch = @user.watches.find(params[:id])
+  end
+
+  def load_user
+    @user = current_user
+  end
 end

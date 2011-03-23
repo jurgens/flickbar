@@ -14,5 +14,18 @@ describe FriendshipsController do
     end
 
     it { should respond_with :redirect }
+    it { should assign_to :friendship }
   end
+
+  describe "destroy" do
+    before do
+      @friendship = @user.friendships.create(:friend_id => @friend.id)
+      request.env["HTTP_REFERER"] = 'back'
+      post :destroy, :id => @friendship.id
+    end
+
+    it { should respond_with :redirect }
+    it { should assign_to :friendship }
+  end
+
 end

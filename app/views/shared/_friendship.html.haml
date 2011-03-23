@@ -2,7 +2,10 @@
 - unless visitor.blank?
 
   - if visitor == owner
-    your page
+    %h2 Your Friends
+    %ul
+      - owner.friends.each do |friend|
+        %li= link_to friend.name, [friend], :class => 'user'
   - else
     %h2= owner.name
     - friendship = visitor.in_friendship_with owner

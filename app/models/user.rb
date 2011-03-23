@@ -12,29 +12,25 @@ class User < ActiveRecord::Base
 
   scope :recent, order("created_at DESC").limit(25)
 
-#  def self.create_from_hash!(hash)
-#    nick = hash['user_info']['nickname']
-#
-#    if nick.match /^profile\.php.+/
-#      nick = hash['user_info']['name'].split(' ').map(&:downcase).join('.')
-#    end
-#
-#    create!( :name => hash['user_info']['name'], :nickname => nick, :email => hash['user_info']['email'], :remember_me => true )
-#  end
-
   def self.find_for_facebook_oauth(access_token, signed_in_resource=nil)
     # name, nickname, email, first_name, last_name, image
     data = access_token['user_info']
-    if user = User.find_by_email(data["email"])
-      user
-    else # Create an user
+    user = User.find_by_email(data["email"])
+
+    if user.nil? # Create an user
       nick = data['nickname']
       if nick.match /^profile\.php.+/
         nick = data['name'].split(' ').map(&:downcase).join('.')
       end
       # TODO: add avatar
-      User.create!(:name => data['name'], :nickname => nick, :email => data["email"], :remember_me => true ) #, :password => Devise.friendly_token[0,20]
+      user = User.create!(:name => data['name'], :nickname => nick, :email => data["email"], :remember_me => true ) #, :password => Devise.friendly_token[0,20]
     end
+
+    user
+  end
+
+  def to_param
+    nickname
   end
 
   def in_friendship_with(user)
@@ -46,7 +42,6 @@ class User < ActiveRecord::Base
   end
 
   def news(limit)
-    user_ids = self.friend_ids + [self.id]
-    Watch.where(:user_id => user_ids).limit(limit)
+    Watch.where(:user_id => self.friend_ids).limit(limit)
   end
 end
