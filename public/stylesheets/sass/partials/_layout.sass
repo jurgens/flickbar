@@ -172,18 +172,25 @@ body.bp
     padding-left: 14px
     background: url(../images/icons/user-icon.png) no-repeat 0 3px
 
-  .recent-users a.user, .recent-movies .movie
-    margin-right: 10px
-    display: inline
-
-  .recent
-    .left
-      float: left
-      width: 50%
-    .right
-      float: left
-      width: 50%
-
+  .recent-movies
+    +column(16)
+    .grid
+      .movie
+        +float-left
+        width: 50%
+        height: 160px
+        .thumb
+          +float-left
+          padding: 0 10px 0 0
+          img
+            +border-radius
+        .details
+          h2
+            padding: 0
+            margin: 0
+            font-size: 125%
+  .recent-users
+    +column(8, true)
 
   a.button
     @include fancy-button(#F0F0F0, 13px, 3px, 1px)

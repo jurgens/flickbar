@@ -1,23 +1,19 @@
 
 = render :partial => 'shared/lookup'
 
-.recent
-  .left
-    %h2 people recently joined
+.recent-movies
+  %h2 movies recently added
 
-    - unless @recent_users.empty?
+  - unless @recent_movies.empty?
+    .movies.grid
+      = render :partial => 'shared/movie', :collection => @recent_movies, :locals => { :owner => current_user }
 
-      .recent-users
-        - @recent_users.each do |user|
-          = link_to user.name, user_path(user.nickname), :class => 'user'
+.recent-users
+  %h2 people recently joined
 
-  .right
-    %h2 movies recently watched
+  - unless @recent_users.empty?
 
-    - unless @recent_movies.empty?
+    %ul.recent-users
+      - @recent_users.each do |user|
+        %li= link_to user.name, user_path(user.nickname), :class => 'user'
 
-      .recent-movies
-        - @recent_movies.each do |movie|
-          .movie
-            = movie.title
-            %sup= movie.watches.count
