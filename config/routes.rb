@@ -18,6 +18,7 @@ Flickbar2::Application.routes.draw do
   end
 
   resources :friendships
+  resources :movies
 
 
   match '/news', :to => 'users#news', :as => 'news'

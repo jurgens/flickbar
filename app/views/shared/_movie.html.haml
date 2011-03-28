@@ -1,11 +1,11 @@
 - is_owner = current_user == owner if user_signed_in?
 
 .movie{:id => "movie_#{movie.id}"}
-  .thumb
-    = image_tag movie.poster.url(:small)
+  .poster
+    = link_to image_tag(movie.poster.url(:small)), movie
   .details
     %h2
-      = movie.title
+      = link_to movie.title, movie
       %sup= movie.users.count
     - if movie.director.present?
       .director

@@ -1,0 +1,17 @@
+.movie
+  .poster
+    =image_tag @movie.poster.url(:large)
+  .details
+
+    %h2.title
+      = @movie.title
+      %span.year== (#{@movie.year})
+      %sup= @movie.users.count
+    - if @movie.director.present?
+      .director
+        by
+        %span.name= @movie.director
+
+    .rating
+      %span.rate= link_to (@movie.rating, @movie.imdb_page)
+      %span.out_of /10

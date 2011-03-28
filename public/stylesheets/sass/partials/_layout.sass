@@ -179,7 +179,7 @@ body.bp
         +float-left
         width: 50%
         height: 160px
-        .thumb
+        .poster
           +float-left
           padding: 0 10px 0 0
           width: 100px
@@ -190,6 +190,27 @@ body.bp
             padding: 0
             margin: 0
             font-size: 125%
+
+  .movie
+    .poster
+      +float-left
+      padding: 0 10px 0 0
+    .details
+      .title
+        padding: 0
+        margin: 0
+        .year
+          color: #777
+      .rating
+        .rate, .out_of
+          font-size: 150%
+        .rate
+          color: #333
+          font-weight: bold
+        .out_of
+          color: #777
+        .imdb
+
   .recent-users
     +column(8, true)
 
