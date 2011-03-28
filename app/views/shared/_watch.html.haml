@@ -6,9 +6,9 @@
     = time_ago_in_words(watch.created_at)
     ago
   .thumb
-    = image_tag watch.movie.poster.url(:thumb)
+    = link_to(image_tag(watch.movie.poster.url(:thumb)), watch.movie)
   %h2
-    = watch.movie.title
+    = link_to watch.movie.title, watch.movie
     %sup= watch.movie.users.count
   - if watch.movie.director.present?
     .director
