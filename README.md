@@ -3,6 +3,7 @@ Flickbar
 
 Spartan movie wish / watch list with social thing.
 
+
 Installation
 ------------
 
@@ -20,3 +21,11 @@ Installation
     rails s
 
 * Go to `http://localhost:3000/` and have fun!
+
+
+Testing
+-------
+
+* Continuous specs running:
+
+    bundle exec autotest
