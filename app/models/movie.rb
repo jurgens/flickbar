@@ -12,7 +12,6 @@ class Movie < ActiveRecord::Base
   validates :title, :presence => true
 
   scope :recently_watched,  lambda { joins(:watches).select("DISTINCT movies.*").order("watches.created_at DESC").limit(20) }
-  scope :pending_imdb,      where("imdb_not_found = 0").where("imdb_id IS NULL")
 
   def imdb_search
     begin

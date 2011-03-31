@@ -11,6 +11,7 @@ gem 'compass'
 gem 'imdb', :git => 'https://github.com/tolosa/imdb.git'
 gem 'paperclip'
 gem 'fancy-buttons'
+gem 'delayed_job',:git => 'git://github.com/collectiveidea/delayed_job.git'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -18,7 +19,7 @@ group :development, :test do
   gem 'metric_fu'
 end
 
-group :development do 
+group :development do
   gem 'mongrel'
 end
 

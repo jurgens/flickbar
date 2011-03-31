@@ -8,6 +8,8 @@ set :rails_env,   "production"
 default_run_options[:pty] = true
 ssh_options[:paranoid]    = false
 
+require 'delayed_job/capistrano'
+
 set :scm, "git"
 
 set :user,      "flickbar"

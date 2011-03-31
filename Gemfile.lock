@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/collectiveidea/delayed_job.git
+  revision: cdae1d256ed1fd206de1fb6ac86b838d93a4b883
+  specs:
+    delayed_job (2.1.4)
+      activesupport (~> 3.0)
+      daemons
+
+GIT
   remote: https://github.com/plataformatec/devise.git
   revision: 0c9bd3259e350466d96e0b1de70d203d23e2e5b9
   specs:
@@ -54,8 +62,8 @@ GEM
     capistrano (2.5.20)
       highline
       highline
-      net-scp
       net-scp (>= 1.0.0)
+      net-scp
       net-sftp
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
@@ -318,6 +326,7 @@ DEPENDENCIES
   compass
   cucumber
   cucumber-rails
+  delayed_job!
   devise!
   factory_girl_rails
   fancy-buttons
