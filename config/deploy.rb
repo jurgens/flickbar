@@ -8,8 +8,6 @@ set :rails_env,   "production"
 default_run_options[:pty] = true
 ssh_options[:paranoid]    = false
 
-require 'delayed_job/capistrano'
-
 set :scm, "git"
 
 set :user,      "flickbar"
@@ -46,4 +44,14 @@ namespace :deploy do
   end
 end
 
+namespace :delayed_job do
+    desc "Restart the delayed_job process"
+    task :restart, :roles => :app do
+        run "cd #{current_path}; RAILS_ENV=#{rails_env} script/delayed_job restart"
+    end
+end
+
+after "deploy:restart", "delayed_job:restart"
 after "deploy:update", "configure", "deploy:migrate", "deploy:cleanup"
+
+
