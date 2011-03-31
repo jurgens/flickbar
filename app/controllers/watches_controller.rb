@@ -8,7 +8,7 @@ class WatchesController < ApplicationController
     unless params[:movie_id].blank?
       @movie = Movie.find params[:movie_id]
     else
-      @movie = Movie.find_or_create params[:title]
+      @movie = Movie.find_or_create_by_title(params[:title])
     end
 
     @watch = @movie.watches.build :user_id => @user.id
