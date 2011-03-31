@@ -2,7 +2,7 @@ require 'bundler/capistrano'
 
 set :application, "flickbar.com"
 set :domain,      "flickbar.com"
-set :repository,  "ssh://git@local3.webta.net/home/git/movieable.git"
+set :repository,  "git://github.com/jurgens/flickbar.git"
 set :rails_env,   "production"
 
 default_run_options[:pty] = true
