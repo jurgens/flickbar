@@ -30,4 +30,5 @@ group :test do
   gem 'launchy'
   gem 'shoulda'
   gem 'timecop'
+  gem 'ZenTest'
 end
