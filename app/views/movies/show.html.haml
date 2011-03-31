@@ -8,7 +8,8 @@
 
     %h2.title
       = @movie.title
-      %span.year== (#{@movie.year})
+      - unless @movie.year.blank?
+        %span.year== (#{@movie.year})
       %sup= @movie.users.count
     - if @movie.director.present?
       .director
@@ -16,5 +17,6 @@
         %span.name= @movie.director
 
     .rating
-      %span.rate= link_to (@movie.rating, @movie.imdb_page)
+      %span.rate
+        = link_to_unless @movie.imdb_page.blank?, (@movie.rating.blank? ? '-': @movie.rating), @movie.imdb_page
       %span.out_of /10
