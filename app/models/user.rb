@@ -33,8 +33,8 @@ class User < ActiveRecord::Base
     nickname
   end
 
-  def in_friendship_with(user)
-    self.friendships.find_by_friend_id user.id
+  def friends_with?(user)
+    self.friends.include? user
   end
 
   def remember_me
