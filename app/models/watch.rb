@@ -10,13 +10,17 @@ class Watch < ActiveRecord::Base
 
   default_scope order("created_at DESC")
 
+  scope :recently,  lambda { where("created_at >= ?", 7.days.ago) }
+  scope :same_as,   lambda { |o| where(:user_id => o.user_id, :movie_id => o.movie_id) }
+
   validate :recently_watched
 
 protected
 
   def recently_watched
-    if self.class.where(:user_id => user_id).where(:movie_id => movie_id).where("created_at >= ?", 7.days.ago).count > 0
+    if Watch.same_as(self).recently.any?
       errors[:base] << 'You have already added this movie to your list'
     end
   end
+  
 end

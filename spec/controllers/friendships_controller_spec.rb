@@ -1,31 +1,26 @@
 require 'spec_helper'
 
 describe FriendshipsController do
-  before do
-    @user = Factory :user
-    @friend = Factory :user
-    sign_in @user
-  end
+
+  let(:user)        { Factory(:user) }
+  let(:friend)      { Factory(:user) }
+  let(:friendship)  { user.friendships.create(:friend_id => friend.id) }
+
+  before { sign_in user }
+  before { request.env["HTTP_REFERER"] = 'back' }
 
   describe "create" do
-    before do
-      request.env["HTTP_REFERER"] = 'back'
-      post :create, :friend_id => @friend.id 
-    end
-
-    it { should respond_with :redirect }
-    it { should assign_to :friendship }
+    before  { post :create, :friend_id => friend.id }
+    it      { should respond_with :redirect }
+    it      { should assign_to :friendship }
+    specify { user.friends.should include friend }
   end
 
   describe "destroy" do
-    before do
-      @friendship = @user.friendships.create(:friend_id => @friend.id)
-      request.env["HTTP_REFERER"] = 'back'
-      post :destroy, :id => @friendship.id
-    end
-
-    it { should respond_with :redirect }
-    it { should assign_to :friendship }
+    before  { post :destroy, :id => friendship.id }
+    it      { should respond_with :redirect }
+    it      { should assign_to :friendship }
+    specify { user.friends.should_not include friend }
   end
 
 end
