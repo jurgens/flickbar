@@ -2,21 +2,12 @@ require 'spec_helper'
 
 describe MoviesController do
 
-#  describe "get index" do
-#    before do
-#      get :index
-#    end
-#
-#    it { should respond_with :success }
-#  end
+  let(:movie) { Factory(:movie) }
 
   describe "get show" do
-    before do
-      @movie = Factory :movie
-      get :show, :id => @movie.id
-    end
-
-    it { should respond_with :success }
+    before { get :show, :id => movie.id }
+    it     { should render_template :show }
+    it     { should assign_to :movie }
   end
 
 end

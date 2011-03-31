@@ -8,7 +8,7 @@
         %li= link_to friend.name, [friend], :class => 'user'
   - else
     %h2= owner.name
-    - friendship = visitor.in_friendship_with owner
+    - friendship = visitor.friends_with? owner
     - if friendship.nil?
       = link_to 'Add to friends', friendships_path(:friend_id => owner.id), :method => :post, :class => 'button'
     - else
