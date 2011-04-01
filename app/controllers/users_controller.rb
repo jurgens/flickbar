@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def show
     @watches = @owner.watches
+    @friendship = current_user.friendships.find_by_friend_id @owner.id
   end
 
   def news
