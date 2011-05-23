@@ -20,9 +20,10 @@ class Movie < ActiveRecord::Base
 
       movie = search.movies.first
       if movie.title(true).downcase == self.title.downcase
+        self.title    = movie.title
         self.imdb_id  = movie.id
         self.director = movie.director.join(', ')
-        self.poster = download_from_url(movie.poster) unless movie.poster.blank?
+        self.poster   = download_from_url(movie.poster) unless movie.poster.blank?
         [:rating, :year].each do |attr|
           self.send "#{attr}=", movie.send(attr)
         end
@@ -48,3 +49,4 @@ protected
   end
 
 end
+
