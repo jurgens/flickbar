@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '~>3.0.0'
+gem 'rake', '~> 0.8.7'
 gem 'mysql2'
 gem 'capistrano'
 gem 'jquery-rails'
@@ -12,6 +13,7 @@ gem 'imdb', :git => 'https://github.com/tolosa/imdb.git'
 gem 'paperclip'
 gem 'fancy-buttons'
 gem 'delayed_job',:git => 'git://github.com/collectiveidea/delayed_job.git'
+gem 'state_machine'
 
 group :development, :test do
   gem 'rspec-rails'
@@ -21,6 +23,7 @@ end
 
 group :development do
   gem 'mongrel'
+  gem 'watchr'
 end
 
 group :test do

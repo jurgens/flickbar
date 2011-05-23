@@ -18,10 +18,16 @@ Flickbar2::Application.routes.draw do
   end
 
   resources :friendships
-  resources :movies
+  resources :movies do
+    member do
+      post :watch
+      post :wish
+      post :unwatch
+    end
+  end
 
 
-  match '/news', :to => 'users#news', :as => 'news'
+  match '/news', :to => 'events#index', :as => 'news'
 
   #  the last route
   match '/:nickname', :to => 'users#show', :as => 'user', :constraints => {:nickname => /.+/}

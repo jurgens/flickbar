@@ -45,7 +45,7 @@ class WatchesController < ApplicationController
   end
 
   def watched
-    @watch.update_attribute :watched, true
+    @watch.watch
 
     respond_to do |format|
       format.js

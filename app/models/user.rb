@@ -44,4 +44,8 @@ class User < ActiveRecord::Base
   def news(limit)
     Watch.where(:user_id => self.friend_ids).limit(limit)
   end
+
+  def events
+    Event.where(:user_id => self.friend_ids)
+  end
 end

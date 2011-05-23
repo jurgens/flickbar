@@ -9,4 +9,8 @@ module ApplicationHelper
     html.html_safe
   end
 
+  def news_message(event)
+    list = event.kind == 'watch' ? 'watched' : 'wish'
+    link_to(event.user.name, event.user) + " has added " + link_to(event.movie.title, event.movie) + " to #{list} list"
+  end
 end

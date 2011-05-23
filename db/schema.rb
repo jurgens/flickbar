@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110331202043) do
+ActiveRecord::Schema.define(:version => 20110523093423) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -37,6 +37,17 @@ ActiveRecord::Schema.define(:version => 20110331202043) do
 
   add_index "delayed_jobs", ["priority", "run_at"], :name => "delayed_jobs_priority"
 
+  create_table "events", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "movie_id"
+    t.string   "kind"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "events", ["movie_id"], :name => "index_events_on_movie_id"
+  add_index "events", ["user_id"], :name => "index_events_on_user_id"
+
   create_table "friendships", :force => true do |t|
     t.integer  "user_id",    :null => false
     t.integer  "friend_id",  :null => false
@@ -46,6 +57,12 @@ ActiveRecord::Schema.define(:version => 20110331202043) do
 
   add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
   add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
+
+  create_table "machines", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "movies", :force => true do |t|
     t.string   "title"
@@ -77,10 +94,12 @@ ActiveRecord::Schema.define(:version => 20110331202043) do
     t.integer  "movie_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "watched",    :default => false
+    t.string   "status",     :limit => 20
+    t.datetime "watched_at"
   end
 
   add_index "watches", ["movie_id"], :name => "index_watches_on_movie_id"
+  add_index "watches", ["status"], :name => "index_watches_on_status"
   add_index "watches", ["user_id"], :name => "index_watches_on_user_id"
 
 end

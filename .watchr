@@ -21,6 +21,7 @@ end
 # --------------------------------------------------
 # Watchr Rules
 # --------------------------------------------------
+watch('app/(controllers/.*).rb')  { |m| spec("spec/%s_spec.rb"      % m[1] ) }
 watch('app/(models/.*).rb')       { |m| spec("spec/%s_spec.rb"      % m[1] ) }
 watch('^spec.*/.*_spec\.rb'   )   { |m| spec("%s"                   % m[0] ) }
 watch('^lib/(.*)\.rb'         )   { |m| spec("spec/libs/%s_spec.rb" % m[1] ) }

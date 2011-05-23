@@ -1,0 +1,16 @@
+
+- if user_signed_in?
+  #watch_status
+    - if watch.nil?
+      = link_to 'Add to wishlist', wish_movie_path(movie), :class => 'button orange', :remote => true, :method => :post, 'data-format' => :javascript
+    - else
+      - if watch.status == 'wish'
+        This movie is in your wish list
+        %br
+        = link_to 'Mark as Watched', watch_movie_path(watch.movie), :class => 'button orange', :remote => true, :method => :post, 'data-format' => :javascript
+      - else
+        ==Watched #{time_ago_in_words(watch.watched_at)} ago
+        %br
+        = link_to 'Wishlist', unwatch_movie_path(watch.movie), :class => 'button orange', :remote => true, :method => :post, 'data-format' => :javascript
+
+      -#= link_to 'Remove', watch_path(watch), :class => 'button red', :remote => true, :method => :delete, 'data-format' => :javascript

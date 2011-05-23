@@ -15,6 +15,7 @@ end
 Factory.define :watch do |f|
   f.association :user
   f.association :movie
+  f.status      'wish'
 end
 
 Factory.define :friendship do |f|

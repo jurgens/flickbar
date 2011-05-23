@@ -214,5 +214,10 @@ body.bp
   .recent-users
     +column(8, true)
 
-  a.button
-    @include fancy-button(#F0F0F0, 13px, 3px, 1px)
+  a
+    &.button
+      @include fancy-button(#F0F0F0, 13px, 3px, 1px)
+    &.button.orange
+      @include fancy-button(#FF9933, 13px, 8px, 1px)
+    &.button.red
+      @include fancy-button(#FF0000, 13px, 8px, 1px)

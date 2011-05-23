@@ -1,0 +1,7 @@
+
+- if @events.any?
+
+  - @events.each do |event|
+    = render :partial => 'event', :locals => {:event => event}
+
+  -#= render :partial => 'event', :collection => @events

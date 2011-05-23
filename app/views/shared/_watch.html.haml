@@ -1,33 +1,34 @@
 - is_owner = current_user == owner if user_signed_in?
 
-.watch{:id => "watch_#{watch.id}"}
-  .ago
-    added
-    = time_ago_in_words(watch.created_at)
-    ago
-  .thumb
-    = link_to(image_tag(watch.movie.poster.url(:thumb)), watch.movie)
-  %h2
-    = link_to watch.movie.title, watch.movie
-    %sup= watch.movie.users.count
-  - if watch.movie.director.present?
-    .director
-      by
-      %span.name= watch.movie.director
-  - if is_owner
-    %ul.controls.owner
-      %li
-        %a.wish{:title => 'Wish', :class => watch.watched? ? '' : 'active'} Wish
-      %li
-        %a.watched{:title => 'Watched', :class => watch.watched? ? 'active' : ''} Watched
-      %li
-        = link_to 'remove', watch_path(watch), :title => 'Delete', :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
-  - elsif user_signed_in?
-    %ul.controls
-      %li
-        - already_listed = current_user.movie_ids.include?(watch.movie.id)
-        = link_to 'Add to Wish list', copy_watch_path(watch),
-            :class => 'wish' + (already_listed ? ' active' : ''),
-            :method => :post,
-            :remote => true,
-            :title => already_listed ? 'You already have this movie in your list' : 'Add a movie to your wish list'
+- if watch.movie.present?
+  .watch{:id => "watch_#{watch.id}"}
+    .ago
+      added
+      = time_ago_in_words(watch.created_at)
+      ago
+    .thumb
+      = link_to(image_tag(watch.poster_url(:thumb)), watch.movie)
+    %h2
+      = link_to watch.movie.title, watch.movie
+      %sup= watch.movie.users.count
+    - if watch.movie.director.present?
+      .director
+        by
+        %span.name= watch.movie.director
+    - if is_owner
+      %ul.controls.owner
+        %li
+          %a.wish{:title => 'Wish', :class => watch.watched? ? '' : 'active'} Wish
+        %li
+          %a.watched{:title => 'Watched', :class => watch.watched? ? 'active' : ''} Watched
+        %li
+          = link_to 'remove', watch_path(watch), :title => 'Delete', :class => 'delete', :method => :delete, :confirm => 'Are you sure you want to delete this movie?'
+    - elsif user_signed_in?
+      %ul.controls
+        %li
+          - already_listed = current_user.movie_ids.include?(watch.movie.id)
+          = link_to 'Add to Wish list', copy_watch_path(watch),
+              :class => 'wish' + (already_listed ? ' active' : ''),
+              :method => :post,
+              :remote => true,
+              :title => already_listed ? 'You already have this movie in your list' : 'Add a movie to your wish list'

@@ -1,0 +1,7 @@
+
+- if event.movie.present?
+  .item
+    = image_tag event.poster_url(:thumb)
+    == #{time_ago_in_words(event.created_at)} ago
+    = news_message(event)
+

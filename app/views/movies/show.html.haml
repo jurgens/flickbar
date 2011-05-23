@@ -1,5 +1,8 @@
 
-= render :partial => 'shared/lookup'
+= render 'shared/lookup'
+
+= content_for :sidebar do
+  = render 'movie_sidebar', :watch => @watch, :movie => @movie
 
 .movie
   .poster
