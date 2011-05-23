@@ -62,12 +62,12 @@ GEM
     capistrano (2.5.20)
       highline
       highline
-      net-scp (>= 1.0.0)
       net-scp
+      net-scp (>= 1.0.0)
       net-sftp
       net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
       net-ssh
+      net-ssh (>= 2.0.14)
       net-ssh-gateway
       net-ssh-gateway (>= 1.0.0)
     capybara (0.4.1.2)
