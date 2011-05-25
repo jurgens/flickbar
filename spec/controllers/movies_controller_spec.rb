@@ -59,6 +59,12 @@ describe MoviesController do
       it          { should respond_with :success }
       it          { should assign_to :watch }
       specify     { response.content_type.should == 'text/javascript' }
+      #same test as at 36 line?
     end
+
+    context "button" do
+      it { expect { post :wish, :id => movie.id, :format => :js }.to change(user.watches, :count).by(1) }
+    end
+
   end
 end
