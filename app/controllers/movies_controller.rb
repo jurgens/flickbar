@@ -9,10 +9,12 @@ class MoviesController < ApplicationController
   def wish
     @watch = current_user.watches.build :movie => @movie
 
-    respond_to do |f|
-      f.js { render :action => :watch }
+    if @watch.save
+      respond_to do |f|
+         f.js { render :action => :watch }
+      end
     end
-  end
+      end
 
   def watch
     @watch = current_user.watches.find_by_movie_id(@movie.id) || current_user.watches.build
