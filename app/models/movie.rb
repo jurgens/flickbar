@@ -1,7 +1,7 @@
 class Movie < ActiveRecord::Base
 
   has_attached_file :poster,
-        :styles => {:thumb => "33x50#", :small => "100x140>", :large => "200x280>"},
+        :styles => {:thumb => "33x50#", :small => "100x140>", :large => "200x280>", :square => "33x33#"},
         :url => "/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :path => ":rails_root/public/system/assets/:class/:attachment/:id/:style_:basename.:extension",
         :default_url => "/images/missing_:class_:style.jpg"

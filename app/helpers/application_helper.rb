@@ -9,8 +9,18 @@ module ApplicationHelper
     html.html_safe
   end
 
-  def news_message(event)
-    list = event.kind == 'watch' ? 'watched' : 'wish'
-    link_to(event.user.name, event.user) + " has added " + link_to(event.movie.title, event.movie) + " to #{list} list"
+  def relative_date(date)
+    date = Date.parse(date, true) unless date.kind_of?(Date)
+    days = (date - Date.today).to_i
+
+    return 'today'     if days == 0
+    return 'tomorrow'  if days == 1
+    return 'yesterday' if days == -1
+
+    return "in #{days} days"      if days.abs < 60 and days > 0
+    return "#{days.abs} days ago" if days.abs < 60 and days < 0
+
+    return date.strftime('%A, %B %e') if days.abs < 182
+    date.strftime('%A, %B %e, %Y')
   end
 end

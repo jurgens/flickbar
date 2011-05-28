@@ -1,5 +1,12 @@
 
-- if @events.any?
-  = render :partial => 'event', :collection => @events
-- else
-  no news
+.events
+  - if @events.any?
+    - current_date = nil
+    - @events.each do |event|
+      - if current_date != event.created_at.to_date
+        - current_date = event.created_at.to_date
+        %h2.date= relative_date(current_date)
+
+      = render event
+  - else
+    %p no news

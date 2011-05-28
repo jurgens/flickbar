@@ -1,0 +1,5 @@
+
+%span.user= link_to(event.user.name, event.user, :class => 'user')
+has watched
+= event.movie.poster? ? image_tag(event.movie.poster.url(:square)) : ''
+%span.movie= link_to(event.movie.title, event.movie)
