@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~>3.0.0'
+gem 'rails', '~> 3.0.0'
 gem 'rake', '~> 0.8.7'
-gem 'mysql2'
+gem 'mysql2', '~>0.2'
 gem 'capistrano'
 gem 'jquery-rails'
 gem 'haml'
+gem 'sass'
 gem 'omniauth', '~>0.2.0'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'compass'
@@ -28,11 +29,8 @@ end
 
 group :test do
   gem 'fuubar'
-  gem 'cucumber'
-  gem 'cucumber-rails'
   gem 'capybara'
   gem 'launchy'
   gem 'shoulda'
   gem 'timecop'
-  gem 'ZenTest'
 end
