@@ -3,8 +3,10 @@ class UsersController < ApplicationController
   before_filter :authenticate_user!, :only => [:news]
   before_filter :find_owner, :only => [:show]
 
+  has_scope :by_status
+
   def show
-    @watches = @owner.watches
+    @watches = apply_scopes(@owner.watches)
     @friendship = current_user.friendships.find_by_friend_id @owner.id
   end
 

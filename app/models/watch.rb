@@ -16,6 +16,7 @@ class Watch < ActiveRecord::Base
 
   scope :recently,  lambda { where("created_at >= ?", 7.days.ago) }
   scope :same_as,   lambda { |o| where(:user_id => o.user_id).where(:movie_id => o.movie_id).where("id <> ?", o.id.to_i) }
+  scope :by_status, lambda { |status| where(:status => status) unless status.blank? }
 
   validate :recently_watched
 
