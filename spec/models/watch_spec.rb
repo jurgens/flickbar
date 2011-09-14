@@ -26,5 +26,4 @@ describe Watch do
     specify { new_watch.should_not be_valid }
     specify { new_watch.should have(1).error_on(:base) }
   end
-
 end

@@ -4,9 +4,14 @@
   - if current_user == owner
 
     %h2 Your Friends
-    %ul
-      - owner.friends.each do |friend|
-        %li= link_to friend.name, [friend], :class => 'user'
+
+    - if owner.friends.any?
+      %ul
+        - owner.friends.each do |friend|
+          %li= link_to friend.name, [friend], :class => 'user'
+    - else
+      you have no friends
+
   - else
 
     %h2= owner.name

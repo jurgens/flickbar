@@ -172,25 +172,6 @@ body.bp
     padding-left: 14px
     background: url(../images/icons/user-icon.png) no-repeat 0 3px
 
-  .recent-movies
-    +column(16)
-    .grid
-      .movie
-        +float-left
-        width: 50%
-        height: 160px
-        .poster
-          +float-left
-          padding: 0 10px 0 0
-          width: 100px
-          img
-            +border-radius
-        .details
-          h2
-            padding: 0
-            margin: 0
-            font-size: 125%
-
   .movie
     .poster
       +float-left
@@ -211,6 +192,27 @@ body.bp
           color: #777
         .imdb
 
+  .recent-movies
+    +column(16)
+    .grid
+      overflow: hidden
+      .movie
+        +float-left
+        width: 25%
+        height: 200px
+        .poster
+          display: block
+          float: none
+          padding: 0 10px 0 0
+          width: 100px
+          img
+            +border-radius
+        .details
+          display: block
+          h2
+            padding: 0
+            margin: 0
+            font-size: 110%
   .recent-users
     +column(8, true)
 
