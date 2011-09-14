@@ -5,9 +5,9 @@
   = render :partial => 'shared/friendship', :locals => { :friendship => @friendship, :owner => @owner }
 
 %ul.by-status
-  %li= link_to 'All', user_url(@owner), :class => params[:by_status].blank? ? 'active' : ''
-  %li= link_to 'Wishlist', user_status_url(@owner, 'wish'), :class => params[:by_status] == 'wish'  ? 'active' : ''
-  %li= link_to 'Watched', user_status_url(@owner, 'watched'), :class => params[:by_status] == 'watched' ? 'active' : ''
+  %li= link_to 'All', user_url(@owner), :class => params[:status].blank? ? 'active' : ''
+  %li= link_to 'Wishlist', user_status_url(@owner, 'wish'), :class => params[:status] == 'wish'  ? 'active' : ''
+  %li= link_to 'Watched', user_status_url(@owner, 'watched'), :class => params[:status] == 'watched' ? 'active' : ''
 
 - if @watches.empty?
   no movies

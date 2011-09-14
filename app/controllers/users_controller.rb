@@ -2,11 +2,17 @@ class UsersController < ApplicationController
 
   before_filter :authenticate_user!, :only => [:news]
   before_filter :find_owner, :only => [:show]
-
-  has_scope :by_status
+  before_filter :set_order, :only => [:show]
 
   def show
-    @watches = apply_scopes(@owner.watches)
+    @watches = case params[:status]
+      when nil
+        @owner.watches.order('created_at DESC')
+      when 'wish'
+        @owner.wishlist
+      when 'watched'
+        @owner.watchedlist
+    end
     @friendship = current_user.friendships.find_by_friend_id @owner.id
   end
 
@@ -15,6 +21,10 @@ class UsersController < ApplicationController
   end
 
 protected
+
+  def set_order
+    @order_by = params[:status] == 'watched' ? 'watched_at DESC' : 'created_at DESC'
+  end
 
   def find_owner
     @owner = User.find_by_nickname(params[:nickname])

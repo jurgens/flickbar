@@ -48,4 +48,12 @@ class User < ActiveRecord::Base
   def events
     Event.where(:user_id => self.friend_ids)
   end
+
+  def wishlist
+    watches.with_status(:wish).includes(:movie).order('created_at DESC')
+  end
+
+  def watchedlist
+    watches.with_status(:watched).includes(:movie).order('watched_at DESC')
+  end
 end

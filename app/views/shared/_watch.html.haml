@@ -3,9 +3,10 @@
 - if watch.movie.present?
   .watch{:id => "watch_#{watch.id}"}
     .ago
-      added
-      = time_ago_in_words(watch.created_at)
-      ago
+      - if watch.watched_at.blank?
+        == added #{time_ago_in_words(watch.created_at)} ago
+      - else
+        == watched #{time_ago_in_words(watch.watched_at)} ago
     .thumb
       = link_to(image_tag(watch.poster_url(:thumb)), watch.movie)
     %h2
