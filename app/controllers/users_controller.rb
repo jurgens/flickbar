@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       when 'watched'
         @owner.watchedlist
     end
-    @friendship = current_user.friendships.find_by_friend_id @owner.id
+    @friendship = current_user.friendships.find_by_friend_id @owner.id unless current_user.blank?
   end
 
   def news
