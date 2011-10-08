@@ -5,7 +5,7 @@
     = link_to image_tag(movie.poster.url(:small)), movie
   .details
     %h2
-      = link_to movie.title, movie
+      = link_to "#{movie.title} (#{movie.year})", movie
       %sup= movie.users.count
     - if movie.director.present?
       .director

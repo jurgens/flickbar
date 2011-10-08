@@ -15,4 +15,6 @@ rescue LoadError
 
 end
 
+include Rake::DSL
+
 Flickbar2::Application.load_tasks

@@ -6,3 +6,16 @@ a.button, form button {
 a.button:hover, a.button:active, a.button:focus, form button:hover, form button:active, form button:focus {
   background-image: none !important;
 }
+
+/* line 7, sass/ie6.scss */
+.autocomplete-w1 {
+  background: none;
+  margin: 0;
+}
+
+/* line 10, sass/ie6.scss */
+.autocomplete {
+  height: 350px;
+  margin: 0;
+  overflow-x: hidden;
+}

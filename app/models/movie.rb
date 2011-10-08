@@ -19,7 +19,7 @@ class Movie < ActiveRecord::Base
       self.imdb_not_found = true
 
       movie = search.movies.first
-      if movie.title(true).downcase == self.title.downcase
+      if movie.title(true).downcase == self.title.split(" (")[0].downcase
         self.title    = movie.title
         self.imdb_id  = movie.id
         self.director = movie.director.join(', ')
@@ -38,6 +38,13 @@ class Movie < ActiveRecord::Base
 
   def imdb_page
     "http://www.imdb.com/title/tt#{imdb_id}" unless imdb_id.blank?
+  end
+
+  def self.similar_titles (title)
+    begin
+      @search = Imdb::Search.new(title)
+      @search.movies.collect { |v| v.title.strip }
+    end
   end
 
 protected
