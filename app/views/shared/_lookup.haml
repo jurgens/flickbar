@@ -5,7 +5,15 @@
       = submit_tag 'Add to my watch list'
     :javascript
       $(function(){
-        $("#title").placeholder();
+        $("#title").placeholder().autocomplete({
+          serviceUrl:'/autocomplete',
+          minChars:4,
+          maxHeight:'auto',
+          width:690,
+          zIndex: 9999,
+          deferRequestBy: 200, //miliseconds
+          noCache: true,
+        });
       });
   - else
     %h2.login_invitation

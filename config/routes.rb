@@ -29,6 +29,8 @@ Flickbar2::Application.routes.draw do
 
   match '/news', :to => 'events#index', :as => 'news'
 
+  match '/autocomplete', :to => 'movies#autocomplete'
+
   #  the last route
   match '/:nickname/:status', :to => 'users#show', :constraints => {:nickname => /.+/}, :as => 'user_status'
   match '/:nickname', :to => 'users#show', :as => 'user', :constraints => {:nickname => /.+/}

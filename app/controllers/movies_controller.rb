@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:show]
-  before_filter :resource
+  before_filter :authenticate_user!, :except => [:show, :autocomplete]
+  before_filter :resource, :except => [:autocomplete]
 
   def show
     @watch = current_user.watches.find_by_movie_id(@movie.id) if user_signed_in?
@@ -32,6 +32,13 @@ class MoviesController < ApplicationController
     respond_to do |f|
       f.js { render :action => :watch }
     end
+  end
+
+  def autocomplete
+    titles = Movie.imdb_similar_titles params[:query]
+    @response = {"query" => params[:query],
+                 "suggestions" => titles }
+    render :json => @response
   end
 
 protected
