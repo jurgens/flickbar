@@ -2,3 +2,11 @@ a.button, form button {
   background-image: none !important;
   &:hover, &:active, &:focus {
     background-image: none !important; } }
+
+.autocomplete-w1 {
+  background:none;
+  margin:0; }
+  .autocomplete {
+    height:350px;
+    margin:0;
+    overflow-x:hidden; }
