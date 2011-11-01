@@ -9,4 +9,6 @@ describe Movie do
 
   pending "imdb_search"
 
+  pending "imdb_similar_titles"
+
 end

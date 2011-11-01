@@ -43,7 +43,7 @@ class Movie < ActiveRecord::Base
   def self.imdb_similar_titles (title)
     begin
       @search = Imdb::Search.new(title)
-      @search.movies.collect { |v| v.title.split(" (")[0].strip }
+      @search.movies.collect { |v| v.title }
     end
   end
 
