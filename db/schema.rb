@@ -58,12 +58,6 @@ ActiveRecord::Schema.define(:version => 20110523162511) do
   add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
   add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
 
-  create_table "machines", :force => true do |t|
-    t.string   "status"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "movies", :force => true do |t|
     t.string   "title"
     t.integer  "year"
