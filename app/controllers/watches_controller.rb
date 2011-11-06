@@ -2,6 +2,7 @@ class WatchesController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :load_user
+  before_filter :cut_year, :only => [:create]
   before_filter :load_watch, :only => [:destroy, :watched, :wish]
 
   def create
@@ -69,4 +70,9 @@ protected
   def load_user
     @user = current_user
   end
+
+  def cut_year
+    params[:title] = params[:title].split(/\s*[\(|,|\.]\s*[\d]{2,4}/)[0]
+  end
+
 end
