@@ -7,6 +7,13 @@ GIT
       daemons
 
 GIT
+  remote: https://github.com/ariejan/imdb.git
+  revision: f27578564a62c291caef38de98388d726ad547e5
+  specs:
+    imdb (0.6.6)
+      hpricot (~> 0.8.4)
+
+GIT
   remote: https://github.com/plataformatec/devise.git
   revision: 0c9bd3259e350466d96e0b1de70d203d23e2e5b9
   specs:
@@ -14,13 +21,6 @@ GIT
       bcrypt-ruby (~> 2.1.2)
       orm_adapter (~> 0.0.3)
       warden (~> 1.0.3)
-
-GIT
-  remote: https://github.com/tolosa/imdb.git
-  revision: 096ebf20edfc0f75ca8c2e4e41e3d5c021a868fa
-  specs:
-    imdb (0.6.5)
-      hpricot (>= 0.8.1)
 
 GEM
   remote: http://rubygems.org/
@@ -252,7 +252,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.4)
-    rake (0.8.7)
+    rake (0.9.2)
     rcov (0.9.10)
     rdoc (3.9.4)
     reek (1.2.8)
@@ -336,7 +336,7 @@ DEPENDENCIES
   omniauth (~> 0.2.0)
   paperclip
   rails (~> 3.0.0)
-  rake (~> 0.8.7)
+  rake (~> 0.9.2)
   rspec-rails
   sass
   shoulda

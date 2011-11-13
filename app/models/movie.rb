@@ -40,6 +40,13 @@ class Movie < ActiveRecord::Base
     "http://www.imdb.com/title/tt#{imdb_id}" unless imdb_id.blank?
   end
 
+  def self.imdb_similar_titles (title)
+    begin
+      @search = Imdb::Search.new(title)
+      @search.movies.collect { |v| v.title.split(" (")[0].strip }
+    end
+  end
+
 protected
 
   def download_from_url(url)
