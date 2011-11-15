@@ -18,6 +18,8 @@ class Movie < ActiveRecord::Base
       search = Imdb::Search.new(self.title)
       self.imdb_not_found = true
 
+      self.title, self.year = self.title.split(/\s*[\(|,|\.]\s*([\d]{2,4})/)
+
       movie = search.movies.first
       if movie.title(true).downcase == self.title.downcase
         self.title    = movie.title
