@@ -10,3 +10,7 @@
     - if movie.director.present?
       .director
         %span.name= movie.director
+    - if movie.year.present?
+      .year
+        %span.year== (#{movie.year})
+
