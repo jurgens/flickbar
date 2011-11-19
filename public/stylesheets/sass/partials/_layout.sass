@@ -218,7 +218,7 @@ body.bp
             +border-radius
         .details
           display: block
-          h1
+          h2
             padding: 0
             margin: 0
             font-size: 110%
@@ -297,10 +297,11 @@ ul.by-status
   +column(16)
   .comments-list
     overflow: hidden
+    margin-bottom: 2em
+
   .comment
     +column(16)
-    margin-bottom: 1em
-    padding-bottom: 1em
+    padding: 1em 0
     border-bottom: 1px #ccc solid
     .user
       +column(4)
@@ -311,9 +312,11 @@ ul.by-status
         color: #777
         font-size: 90%
         display: block
+      span
+        margin-left: 1em
     .body
       +column(12, true)
-  .comment:nth-child(even)
+  .comment:nth-child(odd)
     background-color: #F0F0F0
 
   form.new_comment
