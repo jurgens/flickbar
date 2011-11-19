@@ -1,0 +1,9 @@
+
+- comment = movie.comments.build
+
+%h2 Post Comment
+= form_for [movie, comment], :remote => true do |f|
+  .input
+    = f.text_area :body, :rows => '3'
+  .submit
+    = f.submit 'Submit', 'data-disable-with' => 'Sending...'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110523162511) do
+ActiveRecord::Schema.define(:version => 20111119085541) do
 
   create_table "authorizations", :force => true do |t|
     t.string   "provider"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(:version => 20110523162511) do
   end
 
   add_index "authorizations", ["user_id"], :name => "index_authorizations_on_user_id"
+
+  create_table "comments", :force => true do |t|
+    t.integer  "movie_id"
+    t.integer  "user_id"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -57,6 +65,12 @@ ActiveRecord::Schema.define(:version => 20110523162511) do
 
   add_index "friendships", ["friend_id"], :name => "index_friendships_on_friend_id"
   add_index "friendships", ["user_id"], :name => "index_friendships_on_user_id"
+
+  create_table "machines", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "movies", :force => true do |t|
     t.string   "title"

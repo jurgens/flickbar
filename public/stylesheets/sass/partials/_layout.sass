@@ -49,7 +49,6 @@ body.bp
     width: 950px
     margin: 0 auto
 
-
     #sidebar
       padding-top: 20px
       $sidebar-columns: floor($blueprint-grid-columns / 3)
@@ -149,10 +148,13 @@ body.bp
         &#title
           width: 680px
 
-  h2
+  h1, h2
     font-family: 'Merriweather', arial, serif
     color: #444
-    font-size: 175%
+  h1
+    font-size: 200%
+  h2
+    font-size: 160%
     &.login_invitation
       text-align: center
       font-size: 125%
@@ -174,6 +176,7 @@ body.bp
     background: url(../images/icons/user-icon.png) no-repeat 0 3px
 
   .movie
+    +column(16)
     .poster
       +float-left
       padding: 0 10px 0 0
@@ -215,7 +218,7 @@ body.bp
             +border-radius
         .details
           display: block
-          h2
+          h1
             padding: 0
             margin: 0
             font-size: 110%
@@ -266,6 +269,7 @@ ul.by-status
         text-shadow: 1px 1px 1px #888
         box-shadow: 0 1px 1px #888
         color: #fff
+
 .autocomplete-w1
   background: url(../images/shadow.png) no-repeat 0 0
   position: absolute
@@ -287,3 +291,34 @@ ul.by-status
     strong
       font-weight: normal
       color: #3399FF
+
+.comments
+  margin-top: 2em
+  +column(16)
+  .comments-list
+    overflow: hidden
+  .comment
+    +column(16)
+    margin-bottom: 1em
+    padding-bottom: 1em
+    border-bottom: 1px #ccc solid
+    .user
+      +column(4)
+      .name
+        font-weight: bold
+        display: block
+      .date
+        color: #777
+        font-size: 90%
+        display: block
+    .body
+      +column(12, true)
+  .comment:nth-child(even)
+    background-color: #F0F0F0
+
+  form.new_comment
+    +column(16)
+    textarea
+      width: 100%
+      height: 5em
+      border: 1px #ccc solid

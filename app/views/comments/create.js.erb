@@ -1,0 +1,3 @@
+$(".comments-empty").hide();
+$(".comments-list").append("<%= escape_javascript render 'comments/comment', :comment => resource, :movie => @movie %>");
+$("#new_comment textarea#comment_body").val('');

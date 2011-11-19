@@ -1,0 +1,14 @@
+
+.comments
+  %h2 Comments
+
+  - if movie.comments.empty?
+    .comments-empty
+      %p no comments
+
+  .comments-list
+    - movie.comments.each do |comment|
+      = render 'comments/comment', :comment => comment, :movie => movie
+
+  - if user_signed_in?
+    = render 'comments/form', :user => current_user, :movie => movie

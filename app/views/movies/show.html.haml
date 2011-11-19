@@ -5,15 +5,16 @@
   = render 'movie_sidebar', :watch => @watch, :movie => @movie
 
 .movie
+  %h1.title
+    = @movie.title
+    - unless @movie.year.blank?
+      %span.year== (#{@movie.year})
+    %sup= @movie.users.count
   .poster
     =image_tag @movie.poster.url(:large)
   .details
 
-    %h2.title
-      = @movie.title
-      - unless @movie.year.blank?
-        %span.year== (#{@movie.year})
-      %sup= @movie.users.count
+
     - if @movie.director.present?
       .director
         by
@@ -23,3 +24,5 @@
       %span.rate
         = link_to_unless @movie.imdb_page.blank?, (@movie.rating.blank? ? '-': @movie.rating), @movie.imdb_page
       %span.out_of /10
+
+= render 'comments', :movie => @movie, :user => current_user

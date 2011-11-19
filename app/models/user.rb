@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :movies,         :through    => :watches
   has_many :friendships,    :dependent  => :destroy
   has_many :friends,        :through    => :friendships, :class_name => 'User'
+  has_many :comments
 
   devise :omniauthable, :rememberable
 

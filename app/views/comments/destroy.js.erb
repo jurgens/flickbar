@@ -1,0 +1,5 @@
+$("#comment_<%=@comment.id%>").fadeOut(function() { $(this).remove() } );
+
+<% if parent.comments.count == 0 %>
+  $(".comments-empty").show();
+<% end %>

@@ -1,18 +1,19 @@
 require 'spec_helper'
 
 describe User do
-  
+
   it { should have_many :authorizations }
   it { should have_many :watches }
   it { should have_many :friendships }
   it { should have_many(:movies).through(:watches) }
   it { should have_many(:friends).through(:friendships) }
+  it { should have_many :comments }
 
   describe "friends_with?" do
     let(:batman) { Factory(:user) }
     let(:robin)  { Factory(:user) }
     let(:joker)  { Factory(:user) }
-    
+
     before  { batman.friends << robin }
     specify { batman.should     be_friends_with robin }
     specify { batman.should_not be_friends_with joker }

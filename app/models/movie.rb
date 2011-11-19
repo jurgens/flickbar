@@ -8,6 +8,7 @@ class Movie < ActiveRecord::Base
 
   has_many :watches
   has_many :users, :through => :watches
+  has_many :comments, :include => :user
 
   validates :title, :presence => true
 

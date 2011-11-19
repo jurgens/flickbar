@@ -1,0 +1,7 @@
+.comment{ :id => "comment_#{comment.id}" }
+  %span.user
+    %span.name= comment.user.name
+    %span.date== #{time_ago_in_words(comment.created_at)} ago
+    - if comment.user == current_user
+      %span.delete= link_to 'delete', movie_comment_path(movie, comment), :method => :delete, :remote => true
+  %span.body= comment.body
