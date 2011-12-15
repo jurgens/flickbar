@@ -16,6 +16,9 @@
       .director
         by
         %span.name= watch.movie.director
+    - if watch.movie.year.present?
+      .year
+        %span.year== (#{watch.movie.year})
     - if is_owner
       %ul.controls.owner
         %li

@@ -6,12 +6,14 @@
     :javascript
       $(function(){
         $("#title").placeholder().autocomplete({
-          serviceUrl:'/autocomplete',
-          minChars:4,
-          maxHeight:'auto',
-          width:690,
+          serviceUrl: '/autocomplete',
+          minChars: 4,
+          maxHeight: 'auto',
+          width: 690,
           zIndex: 9999,
-          deferRequestBy: 200, //miliseconds
+          deferRequestBy: 1000, //miliseconds
+          //cut year on selected value or no?
+          //onSelect: function(value){ $("#title").val($.trim(value).split(/\s*\([\d]{4}/, 1)); },
           noCache: true,
         });
       });

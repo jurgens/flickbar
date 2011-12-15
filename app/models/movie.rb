@@ -19,6 +19,8 @@ class Movie < ActiveRecord::Base
       search = Imdb::Search.new(self.title)
       self.imdb_not_found = true
 
+      self.title, self.year = self.title.split(/\s*[\(|,|\.]\s*([\d]{2,4})/)
+
       movie = search.movies.first
       if movie.title(true).downcase == self.title.downcase
         self.title    = movie.title
@@ -44,7 +46,7 @@ class Movie < ActiveRecord::Base
   def self.imdb_similar_titles (title)
     begin
       @search = Imdb::Search.new(title)
-      @search.movies.collect { |v| v.title.split(" (")[0].strip }
+      @search.movies.collect { |v| v.title }
     end
   end
 
