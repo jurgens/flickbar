@@ -5,10 +5,11 @@ class WatchesController < ApplicationController
   before_filter :load_watch, :only => [:destroy, :watched, :wish]
 
   def create
+    title, year = params[:title_and_year].split(/\s*[\(|,|\.]\s*([\d]{2,4})/)
     unless params[:movie_id].blank?
       @movie = Movie.find params[:movie_id]
     else
-      @movie = Movie.find_or_create_by_title(params[:title])
+      @movie = Movie.find_or_create_by_title_and_year(title, year)
     end
 
     @watch = @movie.watches.build :user_id => @user.id
